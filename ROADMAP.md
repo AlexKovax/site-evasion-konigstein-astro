@@ -54,52 +54,62 @@
 
 ---
 
-## 📕 Pipeline livre PDF / EPUB (à brancher plus tard)
+## 📕 Pipeline livre PDF / EPUB
 
-### Objectif
-Assembler les chapitres Markdown dans l'ordre du récit pour produire un livre :
-- **PDF** (impression / lecture)
-- **EPUB** (liseuses)
+### ✅ Fait (v1.1)
 
-### Prévu dans la structure
-- Chaque article porte `chapter` (numéro) + `pubDatetime` dans son frontmatter → l'ordre du récit est déjà déterministe.
-- Le contenu Markdown est du Markdown pur (titres, paragraphes, listes, blockquotes, images) → compatible Pandoc.
+Le pipeline est opérationnel. Sorties produites dans `dist/book/` :
 
-### Pipeline recommandé : Pandoc
+| Fichier | Format | Moteur |
+|---|---|---|
+| `evasion-konigstein.pdf` | A4, 117 p. | **WeasyPrint** (rendu HTML/CSS) |
+| `evasion-konigstein.epub` | liseuses | **Pandoc** (depuis Markdown) |
 
-Pandoc est l'outil le plus robuste pour un livre multilingue (FR/RU) avec une bonne typographie.
+**Mise en page** (simple et agréable à lire) : page de garde sombre, page de
+ titre, sommaire, chapitres avec saut de page et en-tête numéroté, colophon.
+ Police de corps Cardo, titres Fira Sans, accent `#e05431` (couleurs du site).
+
+### Stack choisie
+
+- **WeasyPrint** (plutôt que xelatex) pour le PDF : installation légère, mise en
+  page pilotée par CSS (`src/styles/book.css`), gestion native du cyrillique
+  (police Lora) quand le contenu RU arrivera.
+- **Pandoc** pour l'EPUB (chemin natif) et pour la conversion Markdown → HTML
+  intermédiaire du PDF.
+- Polices Cardo / Fira Sans / Lora copées depuis `@fontsource` vers
+  `~/.local/share/fonts` par `scripts/setup-book.sh`.
+
+### Commandes
 
 ```bash
-# 1. assembler les chapitres dans l'ordre (script à écrire : scripts/build-book.mjs)
-#    -> dist/book/manuscript.md   (intro + chapitres 1..25, concaténés)
-
-# 2. générer le PDF (via LaTeX, ex. xelatex pour le cyrillic)
-pandoc dist/book/manuscript.md \
-  -o dist/book/evasion-konigstein.pdf \
-  --pdf-engine=xelatex \
-  -V mainfont="Cardo" -V sansfont="Fira Sans" \
-  -V geometry:a4paper -V lang=fr-FR \
-  --toc --toc-depth=1 -N
-
-# 3. générer l'EPUB
-pandoc dist/book/manuscript.md \
-  -o dist/book/evasion-konigstein.epub \
-  --toc --toc-depth=1 \
-  --metadata title="Évasion à Königstein" \
-  --metadata author="Françoise; Vladimir"
+bash scripts/setup-book.sh          # installe pandoc + weasyprint + polices (sudo apt)
+npm run book:html                   # assemble -> dist/book/ (book.html + manuscript.md)
+npm run book:pdf                    # build + rendu WeasyPrint -> .pdf
+npm run book:epub                   # build + Pandoc -> .epub
+npm run book                        # PDF + EPUB d'un coup
+node scripts/build-book.mjs --lang ru   # (futur) version russe
 ```
 
-### Tâches à réaliser quand on attaque le livre
-- [ ] Écrire `scripts/build-book.mjs` : lit la collection `posts`, trie par `chapter`, concatène les corps Markdown, résout les images en chemins absolus, génère `dist/book/manuscript.md`.
-- [ ] Définir une page de garde, une page de titre, un colophon.
-- [ ] Choisir une mise en page LaTeX (classe `book` ou `memoir`), gérer les sauts de page par chapitre.
-- [ ] Gérer les deux langues : un livre FR et un livre RU séparés (mêmes chapitres, contenu traduit).
-- [ ] Gérer les images : pour le livre, embarquer les fichiers (pas des URLs web) → Pandoc le fait si les chemins sont locaux.
-- [ ] Ajouter un script `npm run book:pdf` et `npm run book:epub` (nécessite Pandoc + LaTeX installés).
-- [ ] Décider d'une couverture de livre (image `konig.jpg` ou une couverture dédiée).
+### Fichiers du pipeline
 
-### Alternative envisageable
-Si on ne veut pas dépendre de Pandoc/LaTeX : solution JS (`md-to-pdf`, `epub-gen`). Moins bonne typographie, mais zéro dépendance système. **Recommandation : Pandoc** (validé par l'utilisateur).
+- `scripts/setup-book.sh` — installation idempotente des dépendances système.
+- `scripts/build-book.mjs` — lit `src/content/posts/<lang>/*.md`, trie par
+  `chapter` (intro en premier), génère `dist/book/manuscript.md` (EPUB) et
+  `dist/book/book.html` (PDF, CSS embarquée inline).
+- `src/styles/book.css` — mise en page print (A4, marges, couverture, sommaire,
+  chapitres, colophon).
+
+### Tâches restantes / améliorations
+
+- [ ] **Optimiser le poids** : le PDF fait 64 Mo et l'EPUB 72 Mo à cause des
+  PNG Ghost très lourds (certains > 12 Mo). Downscaler les images à max ~1600 px
+  et réencoder en JPEG avant intégration.
+- [ ] Version à imprimer : marges de reliure, lignes de fond, numéros de page
+  référentiels dans le sommaire (via `target-counter`), sauts de page pairs/impairs.
+- [ ] Couverture dédiée (au lieu de `konig.jpg` brut en couverture EPUB).
+- [ ] Version russe : `npm run book:pdf -- --lang ru` dès que `src/content/posts/ru/` est rempli.
+- [ ] Warning Pandoc sur l’image de couverture (« could not determine image size ») —
+  non bloquant, à investiguer.
 
 ---
 

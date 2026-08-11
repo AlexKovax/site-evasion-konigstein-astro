@@ -8,7 +8,11 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "extract": "node scripts/extract.mjs"
+    "extract": "node scripts/extract.mjs",
+    "book:html": "node scripts/build-book.mjs",
+    "book:pdf": "npm run book:html && weasyprint dist/book/book.html dist/book/evasion-konigstein.pdf -u $(pwd)/public/ --optimize-images -j 80",
+    "book:epub": "npm run book:html && pandoc dist/book/manuscript.md dist/book/metadata.yaml -o dist/book/evasion-konigstein.epub --toc --toc-depth=1 --resource-path=public --epub-cover-image=public/content/images/2020/04/konig.jpg",
+    "book": "npm run book:pdf && npm run book:epub"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.6.0",

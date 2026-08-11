@@ -40,6 +40,8 @@ src/
     ru/*.md               # articles RU (à fournir — mêmes slugs que FR)
   layouts/  components/  pages/  styles/global.css
 scripts/extract.mjs      # extraction Ghost -> Markdown (déjà exécuté, re-exécutable)
+scripts/build-book.mjs   # assemble les chapitres -> dist/book/ (PDF + EPUB)
+scripts/setup-book.sh    # installe pandoc + weasyprint + polices (pipeline livre)
 public/
   content/images/2020/    # images du récit (ne pas renommer : référencées par les .md)
   _redirects              # redirects 301 SEO — REGENERER si on ajoute/renomme un slug
@@ -87,6 +89,12 @@ npm run dev        # dev server http://localhost:4321
 npm run build      # build statique -> dist/  (vérifier qu'il passe AVANT commit)
 npm run preview    # prévisualiser le build
 npm run extract    # ré-extraire les articles depuis fichiersweb/ (idempotent)
+
+# Pipeline livre (nécessite pandoc + weasyprint : lancer d'abord scripts/setup-book.sh)
+bash scripts/setup-book.sh   # install idempotente (sudo apt)
+npm run book:pdf             # -> dist/book/evasion-konigstein.pdf  (WeasyPrint)
+npm run book:epub            # -> dist/book/evasion-konigstein.epub (Pandoc)
+npm run book                 # PDF + EPUB
 ```
 
 **Node 22+** requis.
@@ -126,9 +134,11 @@ npm run extract    # ré-extraire les articles depuis fichiersweb/ (idempotent)
 ## À venir (voir ROADMAP.md en détail)
 
 1. **Contenu russe** — déposer les `.md` dans `src/content/posts/ru/` (mêmes slugs,
-   `lang: "ru"`). Le site RU se construit automatiquement.
-2. **Pipeline livre PDF/EPUB** — `scripts/build-book.mjs` à écrire ; assemblage via Pandoc
-   (ordres des chapitres par le champ `chapter` du frontmatter).
+   `lang: "ru"`). Le site RU se construit automatiquement. Le pipeline livre gère
+   déjà la langue via `node scripts/build-book.mjs --lang ru`.
+2. **Pipeline livre PDF/EPUB** — opérationnel (`scripts/build-book.mjs` + WeasyPrint
+   + Pandoc). Mise en page simple dans `src/styles/book.css`. Reste : optimiser le
+   poids des images, préparer une version à imprimer, et une couverture dédiée.
 
 ## Pièges connus
 
