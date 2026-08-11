@@ -43,4 +43,4 @@ Et c’est son grand-père (ou son père, ce n'est pas très clair) qui refuse d
 
 (J'ajoute ici qu'un article de _l'Est républicain_ de 2017 raconte l'histoire des quatre occupations du village de Sivry, dont celle de 14-18, dès le 29 août 1914. Une grande partie de la population est déportée en Bavière, quelques personnes restées ici seront contraintes de « cohabiter » avec l’ennemi).
 
-Mamye, dans l'enregistrement, parle aussi de Léon avant la guerre, de leurs premières rencontres alors qu'ils étaient tous les deux au collège (dans des collèges voisins je suppose). Je crois me rappeller, mais je ne l'entends pas sur l'enregistrement, qu'elle disait "je l'ai attendu pendant cinq ans". Les cinq ans de sa captivité. Sur celle-ci, elle ne donne pas beaucoup de précisions.
+Mamye, dans l'enregistrement, parle aussi de Léon avant la guerre, de leurs premières rencontres alors qu'ils étaient tous les deux au collège (dans des collèges voisins je suppose). Je crois me rappeler, mais je ne l'entends pas sur l'enregistrement, qu'elle disait "je l'ai attendu pendant cinq ans". Les cinq ans de sa captivité. Sur celle-ci, elle ne donne pas beaucoup de précisions.

@@ -4,18 +4,18 @@ title: "7. La bande"
 chapter: 7
 pubDatetime: 2020-03-19
 modDatetime: 2020-05-10
-description: "Mai 2016 : la bande !\nNous avions espéré la retrouver à Saint Tropez, cette bande enregistrée par mon\npère où le grand-père racontait ses évasions, dans un lot des boîtes de\nplastique gris qui laissaient voir ces bobines marron recelant des trésors, les\nseules qui nous restaient des temps anciens. Mais les inscriptions étaient\ntoutes morceaux de rock et autres.\n\nEt puis, ce jour de mai, Jean-Paul, mon frère, déblaie une bibliothèque dans son\nstudio à Paris, et soudain me tend une boîte de ce typ"
+description: "Mai 2016 : la bande !\nNous avions espéré la retrouver à Saint-Tropez, cette bande enregistrée par mon\npère où le grand-père racontait ses évasions, dans un lot des boîtes de\nplastique gris qui laissaient voir ces bobines marron recelant des trésors, les\nseules qui nous restaient des temps anciens. Mais les inscriptions étaient\ntoutes morceaux de rock et autres.\n\nEt puis, ce jour de mai, Jean-Paul, mon frère, déblaie une bibliothèque dans son\nstudio à Paris, et soudain me tend une boîte de ce typ"
 authors: ["Françoise", "Vladimir"]
 lang: "fr"
 ---
 
 ### Mai 2016 : la bande !
 
-Nous avions espéré la retrouver à Saint Tropez, cette bande enregistrée par mon père où le grand-père racontait ses évasions, dans un lot des boîtes de plastique gris qui laissaient voir ces bobines marron recelant des trésors, les seules qui nous restaient des temps anciens. Mais les inscriptions étaient toutes morceaux de rock et autres.
+Nous avions espéré la retrouver à Saint-Tropez, cette bande enregistrée par mon père où le grand-père racontait ses évasions, dans un lot des boîtes de plastique gris qui laissaient voir ces bobines marron recelant des trésors, les seules qui nous restaient des temps anciens. Mais les inscriptions étaient toutes morceaux de rock et autres.
 
 Et puis, ce jour de mai, Jean-Paul, mon frère, déblaie une bibliothèque dans son studio à Paris, et soudain me tend une boîte de ce type. Dessus, une inscription : les évasions du grand-père. Nous la tournons et retournons, nous n’y croyons pas. Puis nous crions, nous sautons de joie ! Bon, encore faut-il qu’elle soit exploitable… Depuis ce temps (1964 ou 65) ! Il est écrit aussi « mémé ». Mémé, c’est mémé Marie-Louise, notre arrière-grand-mère de Saint-Tropez. Je ne me rappelais plus du tout que papa l’avait enregistrée.
 
-Quelques jour plus tard : je me rends au laboratoire auquel nous avons confié la précieuse bobine, le cœur un peu battant. Non seulement elle est exploitable, mais le son est excellent, me dit le technicien !
+Quelques jours plus tard : je me rends au laboratoire auquel nous avons confié la précieuse bobine, le cœur un peu battant. Non seulement elle est exploitable, mais le son est excellent, me dit le technicien !
 
 On va enfin connaître les « péripéties » dont parle la lettre.
 

@@ -4,7 +4,7 @@ title: "13. \"Connaissez-vous Vladimir Gabbine?\""
 chapter: 13
 pubDatetime: 2020-03-19
 modDatetime: 2020-06-07
-description: "Une dame répond. Volodia se présente et explique qu’il est à la recherche\nd’informations sur un Vladimir Gabbine qui en 1914 a été fait prisonnier à\nKönigstein et s’est évadé en compagnie du grand-père de sa femme.\n\n- Est-ce que ce nom vous dit quelque chose ?\n\n- Oui, mais il n’est plus de ce monde depuis longtemps…\n\n- Je comprends, bien sûr, mais quelqu’un pourrait-il me parler de lui ?\n\n- Oui, je vous passe son fils.\n\n -  .....!\n\nLe fils de Vladimir! Il s'appelle Gueorgui. Sa voix n’est pas la"
+description: "Une dame répond. Volodia se présente et explique qu’il est à la recherche\nd’informations sur un Vladimir Gabbine qui en 1914 a été fait prisonnier à\nKönigstein et s’est évadé en compagnie du grand-père de sa femme.\n\n- Est-ce que ce nom vous dit quelque chose ?\n\n- Oui, mais il n’est plus de ce monde depuis longtemps…\n\n- Je comprends, bien sûr, mais quelqu’un pourrait-il me parler de lui ?\n\n- Oui, je vous passe son fils.\n\n - .....!\n\nLe fils de Vladimir! Il s'appelle Gueorgui. Sa voix n’est pas la"
 authors: ["Françoise", "Vladimir"]
 lang: "fr"
 ---
@@ -19,7 +19,7 @@ _\- Je comprends, bien sûr, mais quelqu’un pourrait-il me parler de lui ?_
 
 _\- Oui, je vous passe son fils._
 
-_\-  .....!_
+_\- .....!_
 
 Le fils de Vladimir! Il s'appelle Gueorgui. Sa voix n’est pas la voix habituelle d’un homme de 86 ans, elle est étonnamment ferme et énergique.
 
@@ -41,13 +41,13 @@ _« Il a vécu à Moscou, a travaillé comme ingénieur électricien dans les th
 
 _« Vous savez, cette nouvelle est une sorte de soulagement, car ma femme et moi-même nous imaginions un destin beaucoup plus dramatique, étant donné ses origines et son statut dans la Russie tsariste. »_
 
-Volodia lui raconte alors l’histoire de la lettre envoyée au début des années 1920 par Vladimir Gabbine à son camarade Léon Dormois. Gueorgui ignorait bien entendu tout de l’ existence de cette lettre.
+Volodia lui raconte alors l’histoire de la lettre envoyée au début des années 1920 par Vladimir Gabbine à son camarade Léon Dormois. Gueorgui ignorait bien entendu tout de l’existence de cette lettre.
 
 _« Mais comment se fait-il que ce soit maintenant seulement que vous recherchiez tout cela ? »_
 
 Volodia explique que nous avons retrouvé relativement récemment les documents, qu’il propose de lui envoyer. Il prend son adresse mail.
 
-Il faut maintenant que Volodia et moi, nous « digérions » toutes ces informations : Vladimir Gabbine a survécu, il a eu même une longue vie, une famille, un bon travail. Ces informations nous émeuvent. Mais ce que Volodia a appris à Gueorgui Gabbine doivent l’émouvoir encore plus, car il s’agit de son père. Il doit maintenant se poser lui aussi la question : pourquoi son père n’a-t-il jamais parlé de Léon ?
+Il faut maintenant que Volodia et moi, nous « digérions » toutes ces informations : Vladimir Gabbine a survécu, il a eu même une longue vie, une famille, un bon travail. Ces informations nous émeuvent. Mais ce que Volodia a appris à Gueorgui Gabbine doit l’émouvoir encore plus, car il s’agit de son père. Il doit maintenant se poser lui aussi la question : pourquoi son père n’a-t-il jamais parlé de Léon ?
 
 Pour Volodia et moi, l’hypothèse que le refus de Léon de l’accueillir l’a déçu ou blessé et qu’il l’a en quelque sorte « effacé » de l’histoire est la plus probable.
 

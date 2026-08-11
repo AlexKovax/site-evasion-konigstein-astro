@@ -15,9 +15,9 @@ Au printemps 2020, nous attendons toujours des nouvelles de Königstein, du resp
 
 _Cher M. Wunrau,_
 
-_Malheureusement, pour diverses raisons, ce n’est que maintenant  que je suis en mesure de répondre à votre demande et je dois vous décevoir immédiatement, car nous n'avons pas encore fait de recherches sur l'histoire du camp des officiers pendant la Première Guerre mondiale_
+_Malheureusement, pour diverses raisons, ce n’est que maintenant que je suis en mesure de répondre à votre demande et je dois vous décevoir immédiatement, car nous n'avons pas encore fait de recherches sur l'histoire du camp des officiers pendant la Première Guerre mondiale_
 
-_Voilà ce qui est écrit dans notre «Chronique de la forteresse de Königstein, 3__ème_  _partie, 1898 - 1930»:_
+_Voilà ce qui est écrit dans notre «Chronique de la forteresse de Königstein, 3ème partie, 1898 - 1930»:_
 
 _«Le 15 mai 1915 à 2 heures du matin, tentative d'évasion du lieutenant français Dormois et du lieutenant russe Gabbin. Ils sont arrêtés par un gendarme autrichien à Aussig. Le 29 mai, le lieutenant français Dormois et le lieutenant russe Gabbin ont été condamnés chacun à 2 mois de prison.»_
 
@@ -31,13 +31,13 @@ Nous sommes partagés entre la joie de voir qu’il y a des traces dans les arch
 
 Volodia envoie les traductions de la lettre du grand-père et du script de l’enregistrement à Bernhardt, qui les traduit en allemand et les transmet à M. Busse.
 
-Mais nous avons maintenant la date exacte de l’évasion, l’heure (2 heures du matin, le grand-père disait minuit, l’alerte a sans doute été donnée donc 2 heures après), et le lieu de leur arrestation, Aussig, appellation allemande de la ville tchèque d’Usti nad Labem. D’après la carte, ils ont parcouru entre 35 et 40 kms. 20 kms jusqu’à la frontière et un peu moins en Bohême, en territoire tchèque. Ils ont marché environ 16 heures. La région est montagneuse. Marcheront ils encore une vingtaine de kms avec les gendarmes jusqu’à Litomerice, le chef-lieu? Sans doute plutôt les emmènera-t-on en carriole.
+Mais nous avons maintenant la date exacte de l’évasion, l’heure (2 heures du matin, le grand-père disait minuit, l’alerte a sans doute été donnée donc 2 heures après), et le lieu de leur arrestation, Aussig, appellation allemande de la ville tchèque d’Usti nad Labem. D’après la carte, ils ont parcouru entre 35 et 40 kms. 20 kms jusqu’à la frontière et un peu moins en Bohême, en territoire tchèque. Ils ont marché environ 16 heures. La région est montagneuse. Marcheront-ils encore une vingtaine de kms avec les gendarmes jusqu’à Litomerice, le chef-lieu ? Sans doute plutôt les emmènera-t-on en carriole.
 
 En observant ce parcours, une idée surgit dans l’esprit de Volodia: dans l’enregistrement, le grand-père me demande si je connais la date de la bataille de Dresde (!!!…). Il l’évoque car, dit-il, après leur arrestation, sur la route le gendarme autrichien leur a montré, à ces prisonniers français et russe, un monument commémorant une bataille avec Napoléon liée à cet événement.
 
 Mais que fait ce monument en territoire tchèque? Dresde est loin…
 
-Recherche rapide sur internet: à cet endroit près du lieu-dit Kulm, à la suite de la bataille de Dresde du 26 et 27 août (gagnée par Napoléon), le 29 et le 30 août 1813 pour la première fois la coalition Russie-Autriche-Prusse va battre l’armée française (plus exactement le corps d’armée de général Wandamme). A partir de ce moment la chance abandonne Napoléon et il va perdre toutes ses batailles, de Leipzig à Waterloo. Cette victoire de Kulm est devenue l’une de plus glorieuses dans la mémoire des Autrichiens, des Prussiens et des Russes.
+Recherche rapide sur internet: à cet endroit près du lieu-dit Kulm, à la suite de la bataille de Dresde du 26 et 27 août (gagnée par Napoléon), le 29 et le 30 août 1813 pour la première fois la coalition Russie-Autriche-Prusse va battre l’armée française (plus exactement le corps d’armée du général Wandamme). À partir de ce moment la chance abandonne Napoléon et il va perdre toutes ses batailles, de Leipzig à Waterloo. Cette victoire de Kulm est devenue l’une des plus glorieuses dans la mémoire des Autrichiens, des Prussiens et des Russes.
 
 ![](/content/images/2020/09/image-9.png)
 
@@ -49,7 +49,7 @@ Il a bien reçu le témoignage sur l’évasion de Léon, et veut avoir plus d�
 
 Eh bien, cher Herr Busse, c’est de vous que nous attendions des explications sur l’exploit de notre grand-père!
 
-Décidément, il faudra retourner et voir par nous-même, car nous n’aurons guère de détails éclairants. Nous lui répondons quand même en soumettant quelques hypothèses sur la façon de descendre le mur, et lui posons deux ou trois questions sur l’histoire de la forteresse, à tout hasard:
+Décidément, il faudra retourner et voir par nous-mêmes, car nous n’aurons guère de détails éclairants. Nous lui répondons quand même en soumettant quelques hypothèses sur la façon de descendre le mur, et lui posons deux ou trois questions sur l’histoire de la forteresse, à tout hasard:
 
 Dans le rapport de la Croix-Rouge de janvier 1915, il est dit qu’il y a eu une première tentative d’évasion par un officier français en 1870 et cet endroit s’appelle encore «crevasse des Français». Où se trouve cet endroit?
 
@@ -57,7 +57,7 @@ Léon parle du commandant de la forteresse, un certain «_Von Kirski_.» Peut-il
 
 Et qui était ce comte Bennigsen, qui suscite tant de déférence chez les officiers russes d’après le récit du grand-père, et avec qui celui-ci a fomenté sa première tentative d’évasion? Qu’est-il devenu après sa mise aux arrêts?
 
-**25 août:** HerrBusse nous répond.
+**25 août:** Herr Busse nous répond.
 
 _Rép. 1: Dans la nuit du 7 au 8 novembre 1870, les prisonniers de guerre, les sergents Bonet, Bayot et Moizot, s'enfuirent. Ils avaient fabriqué une corde d'environ 20 coudées de long à partir de chemises, de pantalons de toile, de bretelles, de mouchoirs et autres. Ils grimpent sur le parapet de la Möserbatterie derrière le Friedrichsburg et y fixent deux barres transversales à partir d'un arbre. Les mêmes sont serrées dans la crevasse rocheuse sous la batterie mentionnée et la corde y est attachée à une extrémité. Ils descendent le long de cette corde à environ la moitié de la profondeur et, là, probablement, glissent plus bas en utilisant la crevasse et ils se retrouvent donc sur le chemin de ronde. En 1906, cet endroit a été muré._
 
@@ -65,7 +65,7 @@ _Rép. 2: Le 12 août 1914, le colonel Friedrich Johann von Tschirschky und Bög
 
 _Rép. 3: Le comte Guéorgui Pavlovitch Bennigsen était l'un des propriétaires terriens les plus riches de Russie. En 1914, il est capitaine du régiment d’infanterie Nevsky de la 2ème armée du général Samsonov. Il est fait prisonnier à la bataille de Tannenberg._
 
-_A Königstein, il avait l’impression de vivre un calvaire et se tenait isolé de ses camarades, dans une solitude presque monacal. Il laissa pousser ses chevaux et sa barbe et ne portait qu'une vieille veste en cuir en lambeaux. Il parlait plusieurs langues; il traduisait des textes de l'anglais, du français, de l'allemand vers le russe. Il menait également ses propres recherches philosophiques. Les autres officiers «lui rendaient toujours les honneurs» lorsqu'ils le voyaient._
+_À Königstein, il avait l’impression de vivre un calvaire et se tenait isolé de ses camarades, dans une solitude presque monacale. Il laissa pousser ses chevaux et sa barbe et ne portait qu'une vieille veste en cuir en lambeaux. Il parlait plusieurs langues; il traduisait des textes de l'anglais, du français, de l'allemand vers le russe. Il menait également ses propres recherches philosophiques. Les autres officiers «lui rendaient toujours les honneurs» lorsqu'ils le voyaient._
 
 _Le 6 juillet 1915, il fit sa première tentative d’évasion, fut repris et condamné à sept semaines de prison. Le 28 mai 1917, il fit sa deuxième tentative, mais fut repris en Westphalie._
 
@@ -77,7 +77,7 @@ Comme ses trois frères, par son éducation, par son service dans la Garde impé
 
 ![](/content/images/2020/09/image-11.png)
 
-Nous voyons ici son frère  Adam (à gauche), en compagnie du grand-duc Dimitri (au centre), cousin germain du tsar, qui participa à l’assassinat de Raspoutine avec le prince Youssoupov en 1916.
+Nous voyons ici son frère Adam (à gauche), en compagnie du grand-duc Dimitri (au centre), cousin germain du tsar, qui participa à l’assassinat de Raspoutine avec le prince Youssoupov en 1916.
 
 Il est par sa mère le petit-fils de la baronne Von Meck qui fut la mécène et protectrice de Tchaïkovski. C’est aussi un homme politique, député de la Douma élu en 1912 comme représentant la noblesse de la région d’Orel.
 
@@ -103,7 +103,7 @@ On reprend la photo de Gueorgui qui nous a tant intrigués lorsqu’il a dit qu�
 
 ![](/content/images/2020/09/image-13.png)
 
-Et là on comprend tout. A gauche de Vladimir, mais derrière lui, il y a un petit homme avec un chapeau qui porte une chemise claire. C’est Léon ! Méconnaissable, mais c’est lui. C’est vrai, comme il disait, qu’ils sont habillés comme l’as de pique.
+Et là on comprend tout. À gauche de Vladimir, mais derrière lui, il y a un petit homme avec un chapeau qui porte une chemise claire. C’est Léon ! Méconnaissable, mais c’est lui. C’est vrai, comme il disait, qu’ils sont habillés comme l’as de pique.
 
 Nous ouvrons la deuxième photo avec la légende écrite par Ingo Busse: «17 mai 1915. Les prisonniers Dormois et Gabbine sont conduits du «hauptwache» (prison) de Königstein à Dresde pour être jugés.»
 

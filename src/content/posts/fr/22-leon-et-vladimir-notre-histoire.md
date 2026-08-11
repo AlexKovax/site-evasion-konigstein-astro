@@ -15,7 +15,7 @@ Nous commencerons par l’information capitale qu'apporte **Marie-France**:
 
 _« C’est à Vaux-les-Palameix, village (presque?) entièrement détruit pendant la guerre et reconstruit provisoirement en planches (l’école, notamment), que le grand-père est d’abord nommé. En témoigne le lieu de naissance, le 2 mai 1920, de Robert. Sur Wikipedia, Vaulx-les-Palameix apparait comme une commune d’actuellement 57 habitants (1911: 237 – 1921: 71); il est bien mentionné que l’église a été reconstruite en 1926. »_
 
-Ainsi, à la date où vraisemblablement le grand-père reçoit la lettre du Gabbine, il habite non dans le beau bâtiment de l’école de Dannevoux, comme je le voyais en imagination, mais dans une baraque en planches (l’instituteur logeait à l’école) avec sa femme et un nourrisson. On voit là qu’il n’est guère mieux loti à ce point de vue que son camarade, et cela explique bien sa réponse à la lettre de Moscou. C’est avec le recul que nous voyons que sa vie est très différente - il exerce son métier, mange à sa faim, a un enfant et peut envisager l’avenir avec optimisme, ce qui n'est pas le cas de Vladimir. Et chacun d’entre eux ne peut guère imaginer la situation de l’autre dans tous ses aspects. Nous mêmes, c’est après tout ce temps que nous avons pu  essayer de comprendre certaines motivations qui ont dû les animer dans leurs actions de cette époque.
+Ainsi, à la date où vraisemblablement le grand-père reçoit la lettre du Gabbine, il habite non dans le beau bâtiment de l’école de Dannevoux, comme je le voyais en imagination, mais dans une baraque en planches (l’instituteur logeait à l’école) avec sa femme et un nourrisson. On voit là qu’il n’est guère mieux loti à ce point de vue que son camarade, et cela explique bien sa réponse à la lettre de Moscou. C’est avec le recul que nous voyons que sa vie est très différente - il exerce son métier, mange à sa faim, a un enfant et peut envisager l’avenir avec optimisme, ce qui n'est pas le cas de Vladimir. Et chacun d’entre eux ne peut guère imaginer la situation de l’autre dans tous ses aspects. Nous-mêmes, c’est après tout ce temps que nous avons pu essayer de comprendre certaines motivations qui ont dû les animer dans leurs actions de cette époque.
 
 Vaux-les-Palameix (wikipedia et [https://vauxlespalameix.pagesperso-orange.fr/histoire.htm](https://vauxlespalameix.pagesperso-orange.fr/histoire.htm))
 
@@ -25,11 +25,11 @@ Situé dans le fameux saillant de Saint-Mihiel en 1914-1918, le village de Vaux-
 
 ![](/content/images/2020/extraction/22-leon-et-vladimir-notre-histoire-03.jpg)
 
-Vaux-Les-Palameix est un des villages tués pour ainsi dire par la guerre. Il comptait 237 habitants en 1913 et 86 en 1923.
+Vaux-les-Palameix est un des villages tués pour ainsi dire par la guerre. Il comptait 237 habitants en 1913 et 86 en 1923.
 
 ![](/content/images/2020/12/Vaux-les-Palameix-02.jpg)
 
-Avant 1914, Vaux Les Palameix était surtout connu par ses oseraies et sa vannerie célèbre dans toute l’Europe. Marie-France ajoute un souvenir concernant ce village qui nous fait retrouver les jours heureux de notre enfance à Dannevoux :
+Avant 1914, Vaux-les-Palameix était surtout connu par ses oseraies et sa vannerie célèbre dans toute l’Europe. Marie-France ajoute un souvenir concernant ce village qui nous fait retrouver les jours heureux de notre enfance à Dannevoux :
 
 _« On trouve aussi, sur le blason élaboré récemment (2014) un panier d’osier. La légende familiale voulait que ce soit en souvenir des vanniers de ce village que Mamie continuait d’acheter ses paniers aux nomades (gitans ?) qui passaient une fois par an à Dannevoux. »_
 

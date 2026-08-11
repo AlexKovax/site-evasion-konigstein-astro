@@ -4,12 +4,12 @@ title: "5. 3 jours en aôut 14"
 chapter: 5
 pubDatetime: 2020-03-19
 modDatetime: 2020-05-15
-description: "Le grand-père ne nous a pas raconté, en tous cas dans mon souvenir, les combats\ndu 25e bataillon au cours desquels il a été fait prisonnier. Ces trois jours\nd'août 14, les historiens les appelleront plus tard la Bataille des Frontières.\nLes troupes allemandes et françaises s’affrontent dans des combats sanglants au\nsud de la Belgique et en Lorraine. Des dizaines de milliers de soldats des deux\ncamps sont tués ou mis hors de combat, tandis que des centaines de civils\ninnocents sont fusillés par l"
+description: "Le grand-père ne nous a pas raconté, en tout cas dans mon souvenir, les combats\ndu 25e bataillon au cours desquels il a été fait prisonnier. Ces trois jours\nd'août 14, les historiens les appelleront plus tard la Bataille des Frontières.\nLes troupes allemandes et françaises s’affrontent dans des combats sanglants au\nsud de la Belgique et en Lorraine. Des dizaines de milliers de soldats des deux\ncamps sont tués ou mis hors de combat, tandis que des centaines de civils\ninnocents sont fusillés par l"
 authors: ["Françoise", "Vladimir"]
 lang: "fr"
 ---
 
-Le grand-père ne nous a pas raconté, en tous cas dans mon souvenir, les combats du 25e bataillon au cours desquels il a été fait prisonnier. Ces trois jours d'août 14, les historiens les appelleront plus tard la Bataille des Frontières. Les troupes allemandes et françaises s’affrontent dans des combats sanglants au sud de la Belgique et en Lorraine. Des dizaines de milliers de soldats des deux camps sont tués ou mis hors de combat, tandis que des centaines de civils innocents sont fusillés par l’envahisseur qui détruit systématiquement de nombreuses localités.
+Le grand-père ne nous a pas raconté, en tout cas dans mon souvenir, les combats du 25e bataillon au cours desquels il a été fait prisonnier. Ces trois jours d'août 14, les historiens les appelleront plus tard la Bataille des Frontières. Les troupes allemandes et françaises s’affrontent dans des combats sanglants au sud de la Belgique et en Lorraine. Des dizaines de milliers de soldats des deux camps sont tués ou mis hors de combat, tandis que des centaines de civils innocents sont fusillés par l’envahisseur qui détruit systématiquement de nombreuses localités.
 
 Les exactions de l’envahisseur contre les populations des villages et sur les soldats français, prisonniers et exécutés, au mépris des conventions internationales sur le droit de la guerre resteront dans les mémoires.
 
@@ -43,23 +43,23 @@ Et il ajoute:
 
 Pour enrayer le mouvement ennemi, ordre est donné au 25e de se porter, par Arrancy, au bois de Lanromont ( en Belgique ). En débouchant de Beuveilles, il se trouve en pleine bataille : trois compagnies ( 2e , 3e , 4e en première ligne ), sous les ordres du **capitaine Chassepot,** repoussèrent diverses attaques d’infanterie allemande. Les trois autres compagnies restent en réserve autour du village de Beuveilles.
 
-Dans la soirée, les 1ere et 5e compagnies sont envoyées, par le Général commandant le C.A., en soutient du 162e R.I., assez fortement pressé par les Allemands, vers le bois du Fayet. Quand nous arrivons à la crête, les balles allemandes rasent le sol, coupant net la tige des herbes ; quelques patrouilleurs sont blessés. On avance en minces colonnes, utilisant les moindres replis du sol. Sur la crête, nous trouvons une compagnie d’infanterie, dont presque tous les hommes, déployés en tirailleurs, sont tués. Le Capitaine, debout, attend stoïquement la mort ; il nous accueille en pleurant.
+Dans la soirée, les 1re et 5e compagnies sont envoyées, par le Général commandant le C.A., en soutien du 162e R.I., assez fortement pressé par les Allemands, vers le bois du Fayet. Quand nous arrivons à la crête, les balles allemandes rasent le sol, coupant net la tige des herbes ; quelques patrouilleurs sont blessés. On avance en minces colonnes, utilisant les moindres replis du sol. Sur la crête, nous trouvons une compagnie d’infanterie, dont presque tous les hommes, déployés en tirailleurs, sont tués. Le Capitaine, debout, attend stoïquement la mort ; il nous accueille en pleurant.
 
-La 1ere compagnie ouvre le feu, l’ennemi se tait et s’arrête interdit. Alors, la 5e compagnie, enlevée vigoureusement par le **capitaine Paquin**, s’élance hardiment; elle dévale la pente est de la cote 320, mais les mitrailleuses ennemies redoublent de fureur, fauchant les hommes et les blés. Le capitaine Paquin est tombé glorieusement pendant la contre-attaque.
+La 1re compagnie ouvre le feu, l’ennemi se tait et s’arrête interdit. Alors, la 5e compagnie, enlevée vigoureusement par le **capitaine Paquin**, s’élance hardiment; elle dévale la pente est de la cote 320, mais les mitrailleuses ennemies redoublent de fureur, fauchant les hommes et les blés. Le capitaine Paquin est tombé glorieusement pendant la contre-attaque.
 
-Pierrepont et Arrancy sont en flammes. Dans la nuit, en entend les roulements des convois, des cris de blessés, des ordres ; la fusillade et le canon se sont tus ; de part et d’autre, on se reforme après ce combat.
+Pierrepont et Arrancy sont en flammes. Dans la nuit, on entend les roulements des convois, des cris de blessés, des ordres ; la fusillade et le canon se sont tus ; de part et d’autre, on se reforme après ce combat.
 
-****Le 23 août**** est une journée calme pour le Bataillon. Ordre est donné de creuser des tranchées sur les crêtes 279-283 au sud de Arrancy. Le Bataillon se trouve en contact avec des patrouilles ennemies, et, malgré un violent bombardement d’obus à shrappnells, la journée se passe sans trop d’incidents.
+****Le 23 août**** est une journée calme pour le Bataillon. Ordre est donné de creuser des tranchées sur les crêtes 279-283 au sud de Arrancy. Le Bataillon se trouve en contact avec des patrouilles ennemies, et, malgré un violent bombardement d’obus à shrapnells, la journée se passe sans trop d’incidents.
 
 **Le 24 août,** vers midi, en creusant l’horizon à la jumelle, nous apercevons nettement la préparation de l’attaque ennemie. Les Allemands fourmillent dans ce terrain, et font de l’infiltration à outrance ; ils avancent comme une invasion de rats dans les champs ; ils franchissent les crêtes en tirailleurs, les hommes à 15 et 20 mètres les uns des autres.
 
 La Division à notre droite a cédé. Le Bataillon exécute alors son mouvement, échelons par échelons, pouvant se soutenir dans la retraite.
 
-A 13 heure , les premières fractions de 5e compagnie atteignent Rouvrois, lorsqu’un officier de l’état-major arrive à brides abattues et informe le **commandant Guy** que la 42e division d’infanterie se porte à l’attaque et demande de tenir le bois Deffoy comme point d’appui de gauche de cette attaque.
+À 13 heures, les premières fractions de 5e compagnie atteignent Rouvrois, lorsqu’un officier de l’état-major arrive à bride abattue et informe le **commandant Guy** que la 42e division d’infanterie se porte à l’attaque et demande de tenir le bois Deffoy comme point d’appui de gauche de cette attaque.
 
 Le chef de Bataillon, fait alors faire demi-tour au Bataillon. Il constitue un groupe de trois compagnies (4e , 5e , 6e ), sous les ordres du capitaine Chassepot, qui prolongera l’attaque du 162e R.I., et un groupe de trois autres compagnies ( 1re, 2e, 3e Cies ) pour constituer un autre point d’appui autour du bois Deffoy.
 
-Les 4e et 6e compagnies ouvrent le feu sur les troupes allemandes qui ont occupé la croupe au nord de la ferme de Remenoncourt pendant le mouvement de repli du 25e. Les balles rasent le talus de la voie ferrée et claquent sur les rails. Le capitaine Chassepot enlève ses trois compagnies, les chasseurs bondissent, trébuchent dans les fils de fer qui longent la voie, se relèvent hardiment, et, dans les blés murs, baïonnette basse, méprisant la mort, foncent sur la tranchée allemande qui couvre la ferme de Remenoncourt. Nos mitrailleuses sont criblées de balles et enrayées, elles ne peuvent plus appuyer le mouvement.
+Les 4e et 6e compagnies ouvrent le feu sur les troupes allemandes qui ont occupé la croupe au nord de la ferme de Remenoncourt pendant le mouvement de repli du 25e. Les balles rasent le talus de la voie ferrée et claquent sur les rails. Le capitaine Chassepot enlève ses trois compagnies, les chasseurs bondissent, trébuchent dans les fils de fer qui longent la voie, se relèvent hardiment, et, dans les blés mûrs, baïonnette basse, méprisant la mort, foncent sur la tranchée allemande qui couvre la ferme de Remenoncourt. Nos mitrailleuses sont criblées de balles et enrayées, elles ne peuvent plus appuyer le mouvement.
 
 Le Bataillon du 162e R.I, a dépassé la ligne de chemin de fer et s’engouffre tout entier dans le château de Remenoncourt; le château ayant été pris comme objectif par l’artillerie allemande, il en sort et se retire sans marquer de temps d’arrêt. Lorsque le capitaine Chassepot voit la retraite du 162e R.I. commencer, il reportera ses compagnies en avant pour essayer d’entraîner ses voisins. Les compagnies subirent alors de très lourdes pertes, presque tous les officiers, un grand nombre de sous-officiers tombèrent. Le capitaine Chassepot et le **lieutenant Chalon** furent laissés pour morts sur le terrain. Sans direction, laissés à découvert par suite du recul de leurs voisins, les débris des unités se retirent sur Pillon.
 
@@ -69,7 +69,7 @@ Le Commandant du 25e B.C.P. pris la décision de rester le plus longtemps possib
 
 La retraite s’exécuta par échelons de compagnie, 2e compagnie, puis 3e sous la protection de la 1re compagnie. Pendant ces mouvements, le capitaine De Raulin est grièvement blessé, près du bois Deffoy. Malheureusement, nous laissons beaucoup de blessés sur le terrain ; le développement de la bataille empêche de les ramener à l’arrière. Seuls, les blessés pouvant marcher pourront être évacués, et ce sera l’infime minorité, car les blessés du 24 août le furent surtout aux jambes.
 
-**Vers 18h. 30,** la 1ere compagnie a achevé sa retraite sur Rouvrois.
+**Vers 18h. 30,** la 1re compagnie a achevé sa retraite sur Rouvrois.
 
 Deux sections de cette compagnie, groupées sous les ordres du commandant Guy, forment une petite arrière-garde ; on ramène tous ceux qui passent, des blessés même se joignent au Commandant qui prend résolument un fusil et fait le coup de feu, tout en fumant cigarette sur cigarette. Son grand calme se communique aux chasseurs, qui ajustent leur tir comme à la cible.
 

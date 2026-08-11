@@ -4,14 +4,14 @@ title: "25. Merci à nos lecteurs"
 chapter: 25
 pubDatetime: 2020-11-25
 modDatetime: 2021-05-19
-description: "\n\nLes réactions de nos amis qui ont lu le blog et nous ont fait part de leurs\nimpressions nous ont encouragés dans la poursuite de sa rédaction. Nous les\nremercions ici chaleureusement.\n\nIls ont pu avoir  une vision d’ensemble de cette histoire, quand nous, nous\navancions en rassemblant les pièces d’un puzzle et en essayant sans cesse de\nnous mettre « dans la peau » des personnages. Ce regard plus distancié leur  a\npermis de saisir des aspects qui apportaient encore, à nous les auteurs,  plus\nde"
+description: "\n\nLes réactions de nos amis qui ont lu le blog et nous ont fait part de leurs\nimpressions nous ont encouragés dans la poursuite de sa rédaction. Nous les\nremercions ici chaleureusement.\n\nIls ont pu avoir une vision d’ensemble de cette histoire, quand nous, nous\navancions en rassemblant les pièces d’un puzzle et en essayant sans cesse de\nnous mettre « dans la peau » des personnages. Ce regard plus distancié leur a\npermis de saisir des aspects qui apportaient encore, à nous les auteurs, plus\nde"
 authors: ["Françoise", "Vladimir"]
 lang: "fr"
 ---
 
 Les réactions de nos amis qui ont lu le blog et nous ont fait part de leurs impressions nous ont encouragés dans la poursuite de sa rédaction. Nous les remercions ici chaleureusement.
 
-Ils ont pu avoir  une vision d’ensemble de cette histoire, quand nous, nous avancions en rassemblant les pièces d’un puzzle et en essayant sans cesse de nous mettre « dans la peau » des personnages. Ce regard plus distancié leur  a permis de saisir des aspects qui apportaient encore, à nous les auteurs,  plus de relief et de profondeur à nos personnages.
+Ils ont pu avoir une vision d’ensemble de cette histoire, quand nous, nous avancions en rassemblant les pièces d’un puzzle et en essayant sans cesse de nous mettre « dans la peau » des personnages. Ce regard plus distancié leur a permis de saisir des aspects qui apportaient encore, à nous les auteurs, plus de relief et de profondeur à nos personnages.
 
 **Françoise D.**
 
@@ -19,9 +19,9 @@ Magnifique travail, récit très prenant jusqu’à la dernière page qui livre 
 
 Oui, tout cela laisse un goût amer. Une vie non pas tragique, comme pour des millions de ses contemporains, mais une vie triste, comme étouffée, confinée j’allais dire.
 
-Mon père, dans ses 5 années d’oflag a fait une quantité de tentatives d’évasion. Il a failli réussir la dernière,  à été ramené au camp puis expédié dans un camp de représailles. Je remercie le ciel de lui avoir donner des gardiens si efficaces, qui l’ont empêché de rejoindre la Résistance et de subir le sort de ton autre grand-père.
+Mon père, dans ses 5 années d’oflag a fait une quantité de tentatives d’évasion. Il a failli réussir la dernière, à été ramené au camp puis expédié dans un camp de représailles. Je remercie le ciel de lui avoir donner des gardiens si efficaces, qui l’ont empêché de rejoindre la Résistance et de subir le sort de ton autre grand-père.
 
-Après la lecture du chapître 23 :  Ces photos sont incroyables. La dernière déborde de vie. Les deux prisonniers ont vraiment fière allure, sûrs d’eux, souriants.
+Après la lecture du chapître 23 : Ces photos sont incroyables. La dernière déborde de vie. Les deux prisonniers ont vraiment fière allure, sûrs d’eux, souriants.
 
 **Jacques F.**
 
@@ -57,13 +57,13 @@ Un éditeur serait de mon avis.
 
 vendredi 1er mai 2020
 
-Je viens d’achever le chapitre 21 ce qui m’incite à vous faire part de ma plus grande admiration pour ce récit passionnant que j’ai lu en échelonnant dans le temps l’impression des chapitres afin de faire durer le plaisir.  La lecture de l’ensemble répond à des questions que l’on a pu se poser au début, en lecture fragmentaire : comme celle que j’avais soulevée sur la longueur du document historique sur les 3 jours au chapître 5 mais plus loin, en parlant de l’influence de l’école de Jules Ferry sur le nationalisme partagé par la génération de ton grand-père, on trouve réponse à la question : quel regard portait-il sur cette guerre que nous voyons maintenant comme une pure tuerie de masse.
+Je viens d’achever le chapitre 21 ce qui m’incite à vous faire part de ma plus grande admiration pour ce récit passionnant que j’ai lu en échelonnant dans le temps l’impression des chapitres afin de faire durer le plaisir. La lecture de l’ensemble répond à des questions que l’on a pu se poser au début, en lecture fragmentaire : comme celle que j’avais soulevée sur la longueur du document historique sur les 3 jours au chapître 5 mais plus loin, en parlant de l’influence de l’école de Jules Ferry sur le nationalisme partagé par la génération de ton grand-père, on trouve réponse à la question : quel regard portait-il sur cette guerre que nous voyons maintenant comme une pure tuerie de masse.
 
 On comprend aussi vu l’insertion de nombreux passages de documents historiques au fil de votre récit, qu’il y a une alternance de locuteur entre le « je »et ce « nous » qui nous semble être un « ils ».
 
 Au chapitre 8, on accompagne votre admiration pour le courage et l’acharnement du grand-père, d’autant plus que les photos nous donnent à mesurer l’ampleur du défi !
 
-Cela s’approfondit dans le chapître  9 grâce aux archives de la Croix rouge : ce n’est pas seulement Internet qui est épatant, c’est votre manière d’y chercher, et donc d’y trouver l’approfondissement en question. Tout au long de la lecture de votre récit, j’ai d’ailleurs beaucoup apprécié cette mise en perspective de l’information par le cheminement explicite des enquêteurs, cela rend très vivant cet écrit.
+Cela s’approfondit dans le chapître 9 grâce aux archives de la Croix rouge : ce n’est pas seulement Internet qui est épatant, c’est votre manière d’y chercher, et donc d’y trouver l’approfondissement en question. Tout au long de la lecture de votre récit, j’ai d’ailleurs beaucoup apprécié cette mise en perspective de l’information par le cheminement explicite des enquêteurs, cela rend très vivant cet écrit.
 
 L’émotion et le suspense me gagnent au chapître 11 : émotion devant les choix cruciaux mais aussi cruels il faut le dire, qu’imposent les temps de guerre et de vie confinée. C’est éprouvant, les choix n’en sont pas, les êtres, pris au piège des circonstances, font ce que la vie à ce moment là leur impose, des actes qu’ils pourraient regretter plus tard : mais alors, les circonstances auront changé, et il serait fallacieux de mesurer hier aux conditions d’aujourd’hui. Votre récit évite ce piège.
 
@@ -99,6 +99,6 @@ Je suis très heureux d'avoir lu votre récit et je vous encourage à le poursui
 
 **Anne-Marie A.**
 
-Je l'ai commencé aujourd'hui et je ne l'ai presque pas lâché, je ne vous ai pas quittés dans cette quête qui semblait vraiment difficile ...Tout m'a passionnée : l'idée de profiter du confinement pour écrire, le ton si juste, vos questions, vos réflexions, vos doutes, et le suspense, plaisir partagé quand vous avez des indices,  des informations..... vous parcourez le siècle et les lieux. Vous donnez envie de faire des rencontres, de lire et de voyager.
+Je l'ai commencé aujourd'hui et je ne l'ai presque pas lâché, je ne vous ai pas quittés dans cette quête qui semblait vraiment difficile ...Tout m'a passionnée : l'idée de profiter du confinement pour écrire, le ton si juste, vos questions, vos réflexions, vos doutes, et le suspense, plaisir partagé quand vous avez des indices, des informations..... vous parcourez le siècle et les lieux. Vous donnez envie de faire des rencontres, de lire et de voyager.
 
-Je le relirai avant de vous retrouver (grandi avec un grand-père gravement blessé en 1914-18) et j'ai  apprécié lire aussi les commentaires des cousins et de vos amis, avec une "tendresse" particulière pour celui de "l'élève".
+Je le relirai avant de vous retrouver (grandi avec un grand-père gravement blessé en 1914-18) et j'ai apprécié lire aussi les commentaires des cousins et de vos amis, avec une "tendresse" particulière pour celui de "l'élève".
