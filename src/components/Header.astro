@@ -1,0 +1,39 @@
+---
+import { UI, type Locale } from '../consts';
+import { getPostsByLocale } from '../lib/posts';
+
+interface Props {
+  locale: Locale;
+  path: string;
+}
+const { locale, path } = Astro.props;
+const t = UI[locale];
+const otherLocale: Locale = locale === 'fr' ? 'ru' : 'fr';
+
+// la version alternative existe-t-elle ? (au moins un article traduit)
+const otherPosts = await getPostsByLocale(otherLocale);
+const hasOtherVersion = otherPosts.length > 0;
+
+const isActive = (href: string) =>
+  path === href || (href !== `/${locale}/` && path.startsWith(href));
+---
+<header class="site-header">
+  <nav class="site-nav" aria-label={t.navHome}>
+    <a class="brand" href={`/${locale}/`}>{t.siteName}</a>
+    <ul>
+      <li><a href={`/${locale}/`} class={isActive(`/${locale}/`) ? 'active' : ''}>{t.navHome}</a></li>
+      <li><a href={`/${locale}/histoire/`} class={isActive(`/${locale}/histoire/`) ? 'active' : ''}>{t.navStory}</a></li>
+      <li>
+        {hasOtherVersion ? (
+          <a class="lang-switch" href={`/${otherLocale}/`} hreflang={otherLocale} rel="alternate">
+            {otherLocale === 'fr' ? 'FR' : 'RU'}
+          </a>
+        ) : (
+          <span class="lang-switch" title={t.translationPending}>
+            {otherLocale === 'fr' ? 'FR' : 'RU'}
+          </span>
+        )}
+      </li>
+    </ul>
+  </nav>
+</header>

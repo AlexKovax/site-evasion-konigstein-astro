@@ -1,0 +1,35 @@
+# Redirects SEO : anciennes URLs Ghost -> nouvelles routes /fr/
+# Pages d'index
+/                        /fr/    301!
+/histoire/               /fr/histoire/   301
+/histoire                 /fr/histoire/   301
+/rss/                    /fr/    301
+/author/francoise/        /fr/    301
+
+# Anciennes URLs d'articles (slugs Ghost conservés)
+/10-retour-a-koenigstein/                 /fr/posts/10-retour-a-koenigstein/   301
+/12-vladimir-gabbine-je-vous-passe-son-fils/                 /fr/posts/12-vladimir-gabbine-je-vous-passe-son-fils/   301
+/13-avant-1914-une-famille-russe-a-turkestan/                 /fr/posts/13-avant-1914-une-famille-russe-a-turkestan/   301
+/13-noel-chez-gabbine/                 /fr/posts/13-noel-chez-gabbine/   301
+/16/                 /fr/posts/16/   301
+/17-la-famille-gabbine-vivre-dals-la-russie-nouvelle/                 /fr/posts/17-la-famille-gabbine-vivre-dals-la-russie-nouvelle/   301
+/18-comprendre-le-passe/                 /fr/posts/18-comprendre-le-passe/   301
+/18-tachkent/                 /fr/posts/18-tachkent/   301
+/21-passe/                 /fr/posts/21-passe/   301
+/22-leon-et-vladimir-notre-histoire/                 /fr/posts/22-leon-et-vladimir-notre-histoire/   301
+/23-aout-2020-retour-a-konigstein/                 /fr/posts/23-aout-2020-retour-a-konigstein/   301
+/24-octobre-2020-le-rapport-du-colonel-friedrichvon-tschirschky-und-bogendorff-commandent-de-koenigstein/                 /fr/posts/24-octobre-2020-le-rapport-du-colonel-friedrichvon-tschirschky-und-bogendorff-commandent-de-koenigstein/   301
+/25-merci-a-nos-lecteurs/                 /fr/posts/25-merci-a-nos-lecteurs/   301
+/4/                 /fr/posts/4/   301
+/5-3-jours-en-aout-14/                 /fr/posts/5-3-jours-en-aout-14/   301
+/6-corriger-wikipedia/                 /fr/posts/6-corriger-wikipedia/   301
+/6-la-bande/                 /fr/posts/6-la-bande/   301
+/8/                 /fr/posts/8/   301
+/9/                 /fr/posts/9/   301
+/chapitre-10/                 /fr/posts/chapitre-10/   301
+/chapitre-2/                 /fr/posts/chapitre-2/   301
+/chapitre-3/                 /fr/posts/chapitre-3/   301
+/evasion-a-konigstein/                 /fr/posts/evasion-a-konigstein/   301
+/la-lettre-de-vladimir/                 /fr/posts/la-lettre-de-vladimir/   301
+/leon/                 /fr/posts/leon/   301
+/vivre-dans-la-russie-nouvelle/                 /fr/posts/vivre-dans-la-russie-nouvelle/   301

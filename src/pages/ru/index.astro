@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { UI, COVER_IMAGE, type Locale } from '../../consts';
+import { getPostsByLocale } from '../../lib/posts';
+
+const locale: Locale = 'ru';
+const t = UI[locale];
+const posts = await getPostsByLocale(locale);
+---
+<BaseLayout locale={locale} path={Astro.url.pathname}>
+  <section class="hero">
+    <img src={COVER_IMAGE} alt={t.siteName} loading="eager" />
+    <div class="hero-content">
+      <h1>{t.siteName}</h1>
+      <p>{t.tagline}</p>
+    </div>
+  </section>
+
+  {posts.length === 0 ? (
+    <div class="translation-pending">{t.translationPending}</div>
+  ) : (
+    <section class="container-wide" style="padding-top: 3rem;">
+      <ol class="toc">
+        {posts.map((post) => (
+          <li>
+            <span class="num">{post.data.chapter ?? '★'}</span>
+            <a href={`/${locale}/posts/${post.data.slug}/`}>{post.data.title}</a>
+          </li>
+        ))}
+      </ol>
+    </section>
+  )}
+</BaseLayout>

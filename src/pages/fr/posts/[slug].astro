@@ -1,0 +1,18 @@
+---
+import type { GetStaticPaths } from 'astro';
+import PostLayout from '../../../layouts/PostLayout.astro';
+import { getPostsByLocale, postSlug } from '../../../lib/posts';
+import type { Locale } from '../../../consts';
+
+export const getStaticPaths = (async () => {
+  const locale: Locale = 'fr';
+  const posts = await getPostsByLocale(locale);
+  return posts.map((post) => ({
+    params: { slug: postSlug(post) },
+    props: { post, locale },
+  }));
+}) satisfies GetStaticPaths;
+
+const { post, locale } = Astro.props as { post: any; locale: Locale };
+---
+<PostLayout post={post} locale={locale} />

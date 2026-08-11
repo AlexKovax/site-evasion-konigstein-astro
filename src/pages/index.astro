@@ -1,0 +1,7 @@
+---
+// Page racine. Astro i18n (redirectToDefaultLocale) génère automatiquement
+// une redirection 302 vers /fr/. En fallback (et pour les previews locales),
+// on redirige aussi côté client.
+import { Astro } from 'astro';
+return Astro.redirect('/fr/');
+---

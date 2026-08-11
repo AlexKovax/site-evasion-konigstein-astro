@@ -1,0 +1,12 @@
+---
+import { UI, type Locale } from '../consts';
+const { locale } = Astro.props as { locale: Locale };
+const t = UI[locale];
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="inner">
+    <span>© {year} — {t.siteName}</span>
+    <span>{t.authorBy} {['Françoise', 'Vladimir'].join(' & ')}</span>
+  </div>
+</footer>

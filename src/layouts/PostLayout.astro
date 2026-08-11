@@ -1,0 +1,58 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import { UI, type Locale } from '../consts';
+import { getPostsByLocale, postUrl, postSlug, type Post } from '../lib/posts';
+import { render } from 'astro:content';
+
+interface Props {
+  post: Post;
+  locale: Locale;
+}
+const { post, locale } = Astro.props;
+const t = UI[locale];
+
+const { title, chapter, pubDatetime, modDatetime, authors, description } = post.data;
+const dateStr = pubDatetime.toLocaleDateString(locale === 'fr' ? 'fr-FR' : 'ru-RU', {
+  year: 'numeric', month: 'long', day: 'numeric',
+});
+
+// chapitres ordonnés pour la nav prev/next
+const all = await getPostsByLocale(locale);
+const idx = all.findIndex((p) => postSlug(p) === postSlug(post));
+const prev = idx > 0 ? all[idx - 1] : null;
+const next = idx < all.length - 1 ? all[idx + 1] : null;
+
+const { Content } = await render(post);
+const path = Astro.url.pathname;
+---
+<BaseLayout locale={locale} title={title} description={description} path={path}>
+  <article>
+    <header class="post-header container">
+      {chapter && <div class="chapter-label">{t.readingChapter} {chapter}</div>}
+      <h1>{title}</h1>
+      <div class="post-meta">
+        {t.authorBy} {authors.join(' & ')} · <time datetime={pubDatetime.toISOString()}>{dateStr}</time>
+        {modDatetime && modDatetime.toISOString() !== pubDatetime.toISOString() && (
+          <> · mis à jour {modDatetime.toLocaleDateString(locale === 'fr' ? 'fr-FR' : 'ru-RU', { year: 'numeric', month: 'long', day: 'numeric' })}</>
+        )}
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="prose">
+        <Content />
+      </div>
+
+      <nav class="post-nav" aria-label={t.backToStory}>
+        <a class="prev" href={prev ? postUrl(prev, locale) : `/${locale}/histoire/`}>
+          <div class="label">← {t.previousChapter}</div>
+          <div class="title">{prev ? prev.data.title : t.backToStory}</div>
+        </a>
+        <a class="next" href={next ? postUrl(next, locale) : `/${locale}/histoire/`}>
+          <div class="label">{t.nextChapter} →</div>
+          <div class="title">{next ? next.data.title : t.backToStory}</div>
+        </a>
+      </nav>
+    </div>
+  </article>
+</BaseLayout>

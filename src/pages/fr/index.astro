@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { UI, COVER_IMAGE, type Locale } from '../../consts';
+import { getPostsByLocale, postUrl, postSlug } from '../../lib/posts';
+
+const locale: Locale = 'fr';
+const t = UI[locale];
+const posts = await getPostsByLocale(locale);
+
+function fmtDate(d: Date) {
+  return d.toLocaleDateString('fr-FR', { year: 'numeric', month: 'short', day: 'numeric' });
+}
+---
+<BaseLayout locale={locale} path={Astro.url.pathname}>
+  <section class="hero">
+    <img src={COVER_IMAGE} alt={t.siteName} loading="eager" />
+    <div class="hero-content">
+      <h1>{t.siteName}</h1>
+      <p>{t.tagline}</p>
+    </div>
+  </section>
+
+  <section class="container-wide" style="padding-top: 3rem;">
+    <h2 style="font-family: var(--font-ui); font-size: 1.5rem; margin-bottom: 0.5rem;">{t.tableOfContents}</h2>
+    <ol class="toc">
+      {posts.map((post) => (
+        <li>
+          <span class="num">{post.data.chapter ?? '★'}</span>
+          <a href={postUrl(post, locale)}>{post.data.title.replace(/^\d+\.\s*/, '')}</a>
+          <span class="date">{fmtDate(post.data.pubDatetime)}</span>
+        </li>
+      ))}
+    </ol>
+  </section>
+</BaseLayout>
