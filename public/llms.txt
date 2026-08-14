@@ -1,0 +1,66 @@
+# Évasion à Königstein
+
+> Récit historique familial en 25 chapitres + une introduction, écrit par Françoise & Vladimir
+> (2020–2021). Site web multilingue (français par défaut, version russe à paraître) publié
+> avec Astro et déployé sur https://evasion-a-konigstein.site.
+
+Histoire vraie de l'évasion du grand-père Léon Dormois — instituteur lorrain, correspondant
+de guerre à Dannevoux (Meuse) — de la forteresse royale de Königstein (Saxe, Allemagne) en
+1915 pendant la Première Guerre mondiale. Le fil conducteur relie Dannevoux à la forteresse
+de Königstein, puis à Moscou, Tachkent et Samarcande, en croisant la Révolution russe et
+l'histoire de la famille Gabbine (Vladimir, camarade de captivité de Léon). Le récit
+s'appuie sur des documents d'archives inédits, dont le rapport du colonel commandant de
+Koenigstein retrouvé en octobre 2020.
+
+Auteurs : Françoise & Vladimir (petits-enfants de Léon Dormois). Le récit a d'abord paru
+sur un blog Ghost (2020), puis migré en site statique Astro. Les slugs historiques Ghost
+sont conservés pour le SEO ; les anciennes URLs (`/leon/`, `/chapitre-2/`, `/4/`, etc.)
+redirigent en 301 vers les nouvelles routes préfixées `/fr/posts/<slug>/`.
+
+## Pages principales
+
+- [Accueil français](https://evasion-a-konigstein.site/fr/): présentation du récit + sommaire chronologique
+- [Sommaire chronologique (FR)](https://evasion-a-konigstein.site/fr/histoire/): tous les chapitres dans l'ordre du récit
+- [Accueil russe](https://evasion-a-konigstein.site/ru/): version russe (traduction à paraître)
+- [Sommaire chronologique (RU)](https://evasion-a-konigstein.site/ru/histoire/): version russe du sommaire (à paraître)
+- [Sitemap XML](https://evasion-a-konigstein.site/sitemap-index.xml): plan du site (FR + RU, hreflang)
+
+## Récit — chapitres dans l'ordre chronologique
+
+L'ordre est défini par le champ `chapter` du frontmatter ; l'introduction (sans numéro)
+apparaît en premier. Les slugs sont les slugs historiques Ghost, conservés tels quels.
+
+- [Évasion à Königstein (introduction)](https://evasion-a-konigstein.site/fr/posts/evasion-a-konigstein/): présentation du récit, de la forteresse et de la mémoire familiale
+- [1. Quand les souvenirs reviennent](https://evasion-a-konigstein.site/fr/posts/leon/): automne 2014, sur les traces de Maurice Genevoix à Dannevoux (Meuse)
+- [2. On recherche un koenig...](https://evasion-a-konigstein.site/fr/posts/chapitre-2/): le nom exact de la forteresse avait été oublié ; la recherche commence
+- [3. La demande de médaille des évadés](https://evasion-a-konigstein.site/fr/posts/chapitre-3/): 8 janvier 2015, démarches pour la médaille des évadés
+- [4. Koenigstein](https://evasion-a-konigstein.site/fr/posts/4/): recherche dans la liste des camps de prisonniers de 14-18
+- [5. 3 jours en août 14](https://evasion-a-konigstein.site/fr/posts/5-3-jours-en-aout-14/): les combats du grand-père avant sa capture, dans la Meuse
+- [6. Il faut corriger Wikipedia](https://evasion-a-konigstein.site/fr/posts/6-corriger-wikipedia/): le grand-père arrive à Königstein après des « péripéties »
+- [7. La bande](https://evasion-a-konigstein.site/fr/posts/6-la-bande/): mai 2016, découverte de la bande de forçats
+- [8. C'était ici : la découverte de la forteresse](https://evasion-a-konigstein.site/fr/posts/8/): automne 2016, voyage à Karlovy Vary et visite de Königstein
+- [9. Comme dans « La grande illusion »...](https://evasion-a-konigstein.site/fr/posts/9/): le film de Jean Renoir aurait pu être tourné dans cette forteresse
+- [10. Léon : retour à la maison](https://evasion-a-konigstein.site/fr/posts/chapitre-10/): libéré, le grand-père rejoint sa fiancée Clotilde à Paris
+- [11. La lettre de Vladimir](https://evasion-a-konigstein.site/fr/posts/la-lettre-de-vladimir/): début des années 1920, Léon reçoit une lettre de son camarade de camp
+- [12. De Koenigstein à Moscou](https://evasion-a-konigstein.site/fr/posts/10-retour-a-koenigstein/): juillet 2018, retour à Königstein avec Alexis
+- [13. « Connaissez-vous Vladimir Gabbine ? »](https://evasion-a-konigstein.site/fr/posts/12-vladimir-gabbine-je-vous-passe-son-fils/): Volodia cherche un descendant de Vladimir ; une dame répond
+- [14. Noël chez les Gabbine](https://evasion-a-konigstein.site/fr/posts/13-noel-chez-gabbine/): Noël chez la famille Gabbine en Russie
+- [15. Avant 1914. Une famille russe au Turkestan](https://evasion-a-konigstein.site/fr/posts/13-avant-1914-une-famille-russe-a-turkestan/): la famille Gabbine au Turkestan avant la guerre
+- [16. La Grande guerre du côté de Vladimir](https://evasion-a-konigstein.site/fr/posts/16/): suite du récit de Volodia — Vladimir pendant la Grande Guerre
+- [17. La famille Gabbine (presque) réunie](https://evasion-a-konigstein.site/fr/posts/17-la-famille-gabbine-vivre-dals-la-russie-nouvelle/): Gueorgui reprend l'histoire de la famille
+- [18. Tachkent : la fin du monde ancien](https://evasion-a-konigstein.site/fr/posts/18-tachkent/): Tachkent au début de la Révolution russe
+- [19. Vivre dans la Russie nouvelle](https://evasion-a-konigstein.site/fr/posts/vivre-dans-la-russie-nouvelle/): la vie dans la Russie soviétique naissante
+- [20. « Je comprends mieux mon père »](https://evasion-a-konigstein.site/fr/posts/18-comprendre-le-passe/): comprendre le passé familial
+- [21. Léon et Vladimir : mon histoire](https://evasion-a-konigstein.site/fr/posts/21-passe/): à la fin de l'histoire de Léon et Vladimir, une découverte étonnante
+- [22. Léon et Vladimir : notre histoire](https://evasion-a-konigstein.site/fr/posts/22-leon-et-vladimir-notre-histoire/): l'histoire commune de Léon et Vladimir
+- [23. Août 2020 : retour à Königstein](https://evasion-a-konigstein.site/fr/posts/23-aout-2020-retour-a-konigstein/): au printemps 2020, attente de nouvelles de Königstein
+- [24. Octobre 2020 : le rapport du colonel Friedrich von Tschirschky und Bögendorff, commandant de Koenigstein](https://evasion-a-konigstein.site/fr/posts/24-octobre-2020-le-rapport-du-colonel-friedrichvon-tschirschky-und-bogendorff-commandent-de-koenigstein/): rapport du commandant de Königstein, document d'archives retrouvé
+- [25. Merci à nos lecteurs](https://evasion-a-konigstein.site/fr/posts/25-merci-a-nos-lecteurs/): remerciements aux lecteurs et aux contributeurs
+
+## Contexte éditorial
+
+- Publié initialement sur un blog Ghost (2020), migré en site statique Astro 7.
+- Multilingue : FR (complet) + RU (traduction à paraître, slugs identiques entre FR et RU).
+- Le récit peut aussi être assemblé en livre PDF / EPUB (voir le dépôt GitHub `AlexKovax/site-evasion-konigstein-astro`).
+- Sources d'archives : rapport du colonel von Tschirschky und Bögendorff (octobre 2020),
+  lettre de Vladimir, journal de Françoise (2014–2020), documents familiaux.

@@ -45,6 +45,7 @@ scripts/setup-book.sh    # installe pandoc + weasyprint + polices (pipeline livr
 public/
   content/images/2020/    # images du récit (ne pas renommer : référencées par les .md)
   _redirects              # redirects 301 SEO — REGENERER si on ajoute/renomme un slug
+  llms.txt                 # index Markdown pour LLM / référencement IA — REGENERER avec _redirects
 netlify.toml              # déploiement + headers + cache
 ROADMAP.md                # feuille de route (contenu RU + pipeline livre)
 README.md                 # doc projet
@@ -66,7 +67,8 @@ README.md                 # doc projet
 - Les **slugs historiques Ghost sont sacrés** : ne pas les renommer (référencement existant).
 - Si on ajoute ou modifie un slug → **régénérer** `public/_redirects` (voir script de
   génération commenté en haut de ce fichier, ou le reconstruire à la main depuis la liste
-  des `src/content/posts/fr/*.md`).
+  des `src/content/posts/fr/*.md`) **et** `public/llms.txt` (index pour LLM / référencement IA,
+  liste tous les chapitres dans l'ordre avec leur URL canonique).
 
 ### Design
 - Styles globaux dans `src/styles/global.css` (tokens CSS custom properties).
@@ -123,6 +125,8 @@ npm run book                 # PDF + EPUB
   changent. Un agent qui arrive doit pouvoir tout comprendre en lisant uniquement ce fichier
   + `README.md` + `ROADMAP.md`.
 - **Mettre à jour `public/_redirects`** à chaque ajout/retrait/renommage de slug d'article.
+- **Mettre à jour `public/llms.txt`** en même temps (index pour LLM / référencement IA,
+  qui liste les chapitres dans l'ordre avec leur URL canonique).
 - Mettre à jour `src/consts.ts` (chaînes FR/RU) si on ajoute une page ou un élément d'UI.
 
 ### 3. Build & déploiement
