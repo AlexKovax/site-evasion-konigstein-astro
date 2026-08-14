@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import { rehypeImages } from './src/plugins/rehype-images';
 
 // Site multilingue FR (par défaut) + RU.
 // Les slugs historiques Ghost sont conservés pour le SEO ; des redirects
@@ -32,5 +33,6 @@ export default defineConfig({
       theme: 'github-light',
       wrap: false,
     },
+    rehypePlugins: [rehypeImages],
   },
 });

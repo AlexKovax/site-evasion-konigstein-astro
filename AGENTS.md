@@ -15,18 +15,23 @@ de Dannevoux à Moscou, Tachkent et Samarcande).
 - L'export d'origine est dans `fichiersweb/` (non versionné, conservé localement comme
   source d'extraction). **Ne pas modifier ni committer ce dossier.**
 
-### État actuel (v1.0)
-- Site statique **Ast 7** (build `dist/`, 31 pages), multilingue **FR + RU** (RU = placeholders).
+### État actuel (v1.1)
+- Site statique **Astro 7** (build `dist/`, 32 pages), multilingue **FR + RU** (RU = placeholders).
 - 26 articles en Markdown dans `src/content/posts/fr/`, extraits via `scripts/extract.mjs`.
 - Images dans `public/content/images/2020/` (originaux + 6 base64 décodés + `konig.jpg`).
+- SEO : balises Open Graph + Twitter Card, JSON-LD (Article / WebSite), sitemap, robots.txt,
+  flux RSS (`/rss.xml`), redirects 301, `llms.txt` + `llms-full.txt` pour le référencement IA.
+- Images Markdown : lazy loading + dimensions injectées via rehype plugin (`src/plugins/rehype-images.ts`).
+- Pages RU placeholders en `noindex` tant qu'aucun contenu RU n'est présent.
 - Déployé sur **Netlify** : https://evasion-konigstein.netlify.app
 - Repo GitHub : `AlexKovax/site-evasion-konigstein-astro`
 
 ### Stack
-- **Astro 7** (static output) + `@astrojs/sitemap`
+- **Astro 7** (static output) + `@astrojs/sitemap` + `@astrojs/rss`
+- `@astrojs/markdown-remark` (pipeline remark/rehype pour le plugin d'images)
 - Content Collections (`src/content.config.ts`) — un seul loader `glob` sur `src/content/posts`
 - **Polices** via Fontsource : Cardo (serif FR) + Fira Sans (UI), Lora (serif cyrillique RU)
-- **Pandoc** prévu pour le livre PDF/EPUB (non installé pour l'instant — voir `ROADMAP.md`)
+- **Pandoc** + **WeasyPrint** pour le livre PDF/EPUB (voir `ROADMAP.md`)
 
 ## Structure (essentielle)
 
@@ -38,7 +43,15 @@ src/
   content/posts/
     fr/*.md               # articles FR (26)
     ru/*.md               # articles RU (à fournir — mêmes slugs que FR)
-  layouts/  components/  pages/  styles/global.css
+  layouts/
+    BaseLayout.astro     # <head> : OG, Twitter Card, JSON-LD, hreflang, RSS, noindex
+    PostLayout.astro     # article + JSON-LD Article + nav prev/next
+  components/  pages/  styles/global.css
+  plugins/rehype-images.ts  # lazy loading + width/height sur les images Markdown
+  pages/
+    404.astro             # page 404 personnalisée
+    rss.xml.ts            # flux RSS (FR)
+    llms-full.txt.ts      # contenu complet concaténé pour IA
 scripts/extract.mjs      # extraction Ghost -> Markdown (déjà exécuté, re-exécutable)
 scripts/build-book.mjs   # assemble les chapitres -> dist/book/ (PDF + EPUB)
 scripts/setup-book.sh    # installe pandoc + weasyprint + polices (pipeline livre)
@@ -46,7 +59,9 @@ public/
   content/images/2020/    # images du récit (ne pas renommer : référencées par les .md)
   _redirects              # redirects 301 SEO — REGENERER si on ajoute/renomme un slug
   llms.txt                 # index Markdown pour LLM / référencement IA — REGENERER avec _redirects
-netlify.toml              # déploiement + headers + cache
+  robots.txt               # autorise crawl + référence le sitemap
+  humans.txt / ai.txt      # métadonnées humaines / politique IA
+netlify.toml              # déploiement + headers + cache + CSP
 ROADMAP.md                # feuille de route (contenu RU + pipeline livre)
 README.md                 # doc projet
 ```
@@ -69,6 +84,19 @@ README.md                 # doc projet
   génération commenté en haut de ce fichier, ou le reconstruire à la main depuis la liste
   des `src/content/posts/fr/*.md`) **et** `public/llms.txt` (index pour LLM / référencement IA,
   liste tous les chapitres dans l'ordre avec leur URL canonique).
+- **Open Graph + Twitter Card** : émises dans `BaseLayout.astro` sur toutes les pages.
+  `PostLayout.astro` passe `ogType="article"` + `article:published_time` / `article:author`.
+- **JSON-LD** : `WebSite` schema dans `BaseLayout.astro` (défaut), `Article` schema dans
+  `PostLayout.astro` (passé via prop `jsonLd`).
+- **Flux RSS** : `src/pages/rss.xml.ts` (FR uniquement). L'ancienne URL Ghost `/rss/`
+  redirige vers `/rss.xml` en 301.
+- **llms-full.txt** : `src/pages/llms-full.txt.ts` — contenu intégral concaténé des chapitres,
+  généré automatiquement depuis la content collection (pas de maintenance manuelle).
+- **Images Markdown** : le rehype plugin `src/plugins/rehype-images.ts` injecte
+  `loading="lazy"`, `decoding="async"`, `width`, `height` (lectures des headers de fichiers).
+- **Pages RU placeholders** : `noindex` tant qu'aucun post RU n'existe (prop `noindex` de
+  `BaseLayout`). Le `noindex` est levé automatiquement quand des posts RU apparaissent.
+- **Headers de sécurité** : HSTS, CSP, X-Frame-Options, Permissions-Policy dans `netlify.toml`.
 
 ### Design
 - Styles globaux dans `src/styles/global.css` (tokens CSS custom properties).
@@ -147,6 +175,9 @@ npm run book                 # PDF + EPUB
 ## Pièges connus
 
 - **Astro 7** : `post.render()` n'existe plus → utiliser `render(post)` de `astro:content`.
+- **Astro 7 + rehype plugins** : Sätteri est le processeur Markdown par défaut. Pour utiliser
+  `rehypePlugins`, installer `@astrojs/markdown-remark` (déjà fait). Un warning de dépréciation
+  peut apparaître — non bloquant, à surveiller lors des futures migrations Astro.
 - Le filtrage par langue se fait sur `e.data.lang === locale` (pas sur l'ID, dont le format
   dépend du loader glob).
 - Certaines images Ghost n'existaient qu'en variante responsive (`content/images/size/w1920/`).

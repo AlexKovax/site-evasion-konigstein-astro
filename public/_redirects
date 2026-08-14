@@ -3,7 +3,7 @@
 /                        /fr/    301!
 /histoire/               /fr/histoire/   301
 /histoire                 /fr/histoire/   301
-/rss/                    /fr/    301
+/rss/                    /rss.xml   301
 /author/francoise/        /fr/    301
 
 # Anciennes URLs d'articles (slugs Ghost conservés)

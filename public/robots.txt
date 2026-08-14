@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://evasion-a-konigstein.site/sitemap-index.xml

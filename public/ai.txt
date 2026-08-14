@@ -1,0 +1,19 @@
+# ai.txt — Politique d'indexation par les IA
+
+## Autorisé
+
+- Indexation du contenu public par les moteurs de recherche et assistants IA
+  à des fins de référencement et de réponse aux requêtes des utilisateurs
+- Citation de courts extraits avec lien vers la source originale
+- Lecture de /llms.txt et /llms-full.txt pour l'indexation
+
+## Non autorisé
+
+- Republication intégrale du récit sans autorisation des auteurs
+- Entraînement de modèles linguistiques sur le contenu sans accord préalable
+- Extraction automatisée à des fins commerciales
+
+## Contact
+
+Les auteurs : Françoise & Vladimir
+Site : https://evasion-a-konigstein.site

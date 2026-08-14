@@ -1,6 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
-import { UI, type Locale } from '../consts';
+import { UI, SITE_TITLE, SITE_URL, COVER_IMAGE, type Locale } from '../consts';
 import { getPostsByLocale, postUrl, postSlug, type Post } from '../lib/posts';
 import { render } from 'astro:content';
 
@@ -11,7 +11,7 @@ interface Props {
 const { post, locale } = Astro.props;
 const t = UI[locale];
 
-const { title, chapter, pubDatetime, modDatetime, authors, description } = post.data;
+const { title, chapter, pubDatetime, modDatetime, authors, description, cover } = post.data;
 const dateStr = pubDatetime.toLocaleDateString(locale === 'fr' ? 'fr-FR' : 'ru-RU', {
   year: 'numeric', month: 'long', day: 'numeric',
 });
@@ -24,8 +24,44 @@ const next = idx < all.length - 1 ? all[idx + 1] : null;
 
 const { Content } = await render(post);
 const path = Astro.url.pathname;
+const canonical = new URL(path, Astro.site).href;
+const ogImage = cover ? new URL(cover, Astro.site).href : new URL(COVER_IMAGE, Astro.site).href;
+
+// JSON-LD Article
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description || undefined,
+  image: ogImage,
+  datePublished: pubDatetime.toISOString(),
+  dateModified: (modDatetime || pubDatetime).toISOString(),
+  author: authors.map((name) => ({ '@type': 'Person', name })),
+  publisher: {
+    '@type': 'Organization',
+    name: SITE_TITLE,
+    url: SITE_URL,
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': canonical,
+  },
+  inLanguage: locale === 'fr' ? 'fr-FR' : 'ru-RU',
+  ...(chapter ? { articleSection: `Chapitre ${chapter}` } : {}),
+};
 ---
-<BaseLayout locale={locale} title={title} description={description} path={path}>
+<BaseLayout
+  locale={locale}
+  title={title}
+  description={description}
+  path={path}
+  ogType="article"
+  ogImage={cover || COVER_IMAGE}
+  publishedTime={pubDatetime}
+  modifiedTime={modDatetime}
+  authors={authors}
+  jsonLd={articleJsonLd}
+>
   <article>
     <header class="post-header container">
       {chapter && <div class="chapter-label">{t.readingChapter} {chapter}</div>}

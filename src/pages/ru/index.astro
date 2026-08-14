@@ -7,7 +7,7 @@ const locale: Locale = 'ru';
 const t = UI[locale];
 const posts = await getPostsByLocale(locale);
 ---
-<BaseLayout locale={locale} path={Astro.url.pathname}>
+<BaseLayout locale={locale} path={Astro.url.pathname} noindex={posts.length === 0}>
   <section class="hero">
     <img src={COVER_IMAGE} alt={t.siteName} loading="eager" />
     <div class="hero-content">

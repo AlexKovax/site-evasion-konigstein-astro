@@ -1,0 +1,15 @@
+# humans.txt
+
+Site : Évasion à Königstein
+URL : https://evasion-a-konigstein.site
+
+Auteurs
+  Françoise — co-autrice du récit
+  Vladimir — co-auteur du récit
+
+Développement
+  Site statique Astro 7 (migré depuis Ghost 3.13)
+
+Technologies
+  Astro, Fontsource (Cardo, Fira Sans, Lora)
+  Déploiement : Netlify

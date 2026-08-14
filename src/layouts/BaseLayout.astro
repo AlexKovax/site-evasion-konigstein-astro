@@ -19,7 +19,7 @@ import '@fontsource/fira-sans/cyrillic-700.css';
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { UI, type Locale } from '../consts';
+import { UI, SITE_TITLE, SITE_DESCRIPTION, SITE_URL, COVER_IMAGE, type Locale } from '../consts';
 import { getPostsByLocale } from '../lib/posts';
 
 interface Props {
@@ -27,17 +27,49 @@ interface Props {
   title?: string;
   description?: string;
   path?: string;
+  noindex?: boolean;
+  ogType?: 'website' | 'article';
+  ogImage?: string;
+  publishedTime?: Date;
+  modifiedTime?: Date;
+  authors?: string[];
+  jsonLd?: Record<string, any> | Record<string, any>[];
 }
-const { locale, title, description, path = Astro.url.pathname } = Astro.props;
+
+const {
+  locale,
+  title,
+  description,
+  path = Astro.url.pathname,
+  noindex = false,
+  ogType = 'website',
+  ogImage = COVER_IMAGE,
+  publishedTime,
+  modifiedTime,
+  authors,
+  jsonLd,
+} = Astro.props;
 const t = UI[locale];
 const pageTitle = title ? `${title} — ${t.siteName}` : t.siteName;
 const pageDescription = description || t.tagline;
 const canonical = new URL(path, Astro.site).href;
+const ogImageUrl = new URL(ogImage, Astro.site).href;
+const rssUrl = new URL('/rss.xml', Astro.site).href;
 
 // On n'émet d'hreflang alternatif que si la traduction existe.
 const otherLocale: Locale = locale === 'fr' ? 'ru' : 'fr';
 const otherPosts = await getPostsByLocale(otherLocale);
 const altHref = new URL(path.replace(`/${locale}/`, `/${otherLocale}/`), Astro.site).href;
+
+// JSON-LD : WebSite par défaut, ou objet passé par PostLayout (Article).
+const structuredData = jsonLd || {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: SITE_TITLE,
+  url: SITE_URL,
+  description: SITE_DESCRIPTION,
+  inLanguage: locale === 'fr' ? 'fr-FR' : 'ru-RU',
+};
 ---
 <!doctype html>
 <html lang={t.htmlLang}>
@@ -48,12 +80,43 @@ const altHref = new URL(path.replace(`/${locale}/`, `/${otherLocale}/`), Astro.s
     <meta name="description" content={pageDescription} />
     <link rel="canonical" href={canonical} />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="alternate" type="application/rss+xml" title={t.siteName} href={rssUrl} />
+
+    {noindex && <meta name="robots" content="noindex, follow" />}
+
+    <!-- Open Graph -->
+    <meta property="og:type" content={ogType} />
+    <meta property="og:title" content={title || t.siteName} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:site_name" content={t.siteName} />
+    <meta property="og:locale" content={locale === 'fr' ? 'fr_FR' : 'ru_RU'} />
+    {ogType === 'article' && publishedTime && (
+      <meta property="article:published_time" content={publishedTime.toISOString()} />
+    )}
+    {ogType === 'article' && modifiedTime && (
+      <meta property="article:modified_time" content={modifiedTime.toISOString()} />
+    )}
+    {ogType === 'article' && authors?.map((author) => (
+      <meta property="article:author" content={author} />
+    ))}
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title || t.siteName} />
+    <meta name="twitter:description" content={pageDescription} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
     {otherPosts.length > 0 && (
       <link rel="alternate" hreflang={otherLocale} href={altHref} />
     )}
     {otherPosts.length > 0 && (
       <link rel="alternate" hreflang="x-default" href={new URL('/fr/', Astro.site).href} />
     )}
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   </head>
   <body>
     <Header locale={locale} path={path} />

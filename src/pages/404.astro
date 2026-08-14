@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { UI, COVER_IMAGE, type Locale } from '../consts';
+import { getPostsByLocale, postUrl } from '../lib/posts';
+
+const locale: Locale = 'fr';
+const t = UI[locale];
+const posts = await getPostsByLocale(locale);
+---
+<BaseLayout locale={locale} title="404 — Page introuvable" noindex={true} path="/404">
+  <section class="container" style="padding-top: 5rem; text-align: center;">
+    <p style="font-family: var(--font-ui); font-size: 6rem; font-weight: 700; color: var(--color-accent); margin: 0; line-height: 1;">404</p>
+    <h1 style="font-family: var(--font-ui); font-size: 2rem; margin: 1rem 0;">Cette page n'existe pas</h1>
+    <p style="font-family: var(--font-serif); font-size: 1.2rem; color: var(--color-text-muted); margin-bottom: 3rem;">
+      Peut-être cherchez-vous un chapitre du récit ?
+    </p>
+    <p style="margin-bottom: 2rem;">
+      <a href={`/${locale}/`} style="font-family: var(--font-ui); color: var(--color-accent); text-decoration: none; border: 1px solid var(--color-accent); padding: 0.6em 1.5em; border-radius: var(--radius); display: inline-block;">
+        ← Retour à l'accueil
+      </a>
+    </p>
+  </section>
+
+  <section class="container" style="padding-bottom: 4rem;">
+    <h2 style="font-family: var(--font-ui); font-size: 1.3rem; margin-bottom: 1rem;">Sommaire</h2>
+    <ol class="toc">
+      {posts.slice(0, 10).map((post) => (
+        <li>
+          <span class="num">{post.data.chapter ?? '★'}</span>
+          <a href={postUrl(post, locale)}>{post.data.title.replace(/^\d+\.\s*/, '')}</a>
+        </li>
+      ))}
+    </ol>
+    <p style="margin-top: 1rem;">
+      <a href={`/${locale}/histoire/`} style="font-family: var(--font-ui); color: var(--color-accent); text-decoration: none;">Voir tous les chapitres →</a>
+    </p>
+  </section>
+</BaseLayout>

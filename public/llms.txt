@@ -23,7 +23,9 @@ redirigent en 301 vers les nouvelles routes préfixées `/fr/posts/<slug>/`.
 - [Sommaire chronologique (FR)](https://evasion-a-konigstein.site/fr/histoire/): tous les chapitres dans l'ordre du récit
 - [Accueil russe](https://evasion-a-konigstein.site/ru/): version russe (traduction à paraître)
 - [Sommaire chronologique (RU)](https://evasion-a-konigstein.site/ru/histoire/): version russe du sommaire (à paraître)
+- [Flux RSS](https://evasion-a-konigstein.site/rss.xml): derniers chapitres publiés
 - [Sitemap XML](https://evasion-a-konigstein.site/sitemap-index.xml): plan du site (FR + RU, hreflang)
+- [Contenu complet (llms-full.txt)](https://evasion-a-konigstein.site/llms-full.txt): texte intégral de tous les chapitres concaténés
 
 ## Récit — chapitres dans l'ordre chronologique
 

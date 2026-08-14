@@ -116,8 +116,16 @@ node scripts/build-book.mjs --lang ru   # (futur) version russe
 ## 🛠 Améliorations futures possibles (non prioritaires)
 
 - [ ] Recherche full-text (ex. Pagefind) sur le contenu FR
-- [ ] Flux RSS Atom (l'ancien site avait `/rss/`)
+- [x] Flux RSS Atom (`/rss.xml` — l'ancien site avait `/rss/`, redirigé en 301)
+- [x] Balises Open Graph + Twitter Card + JSON-LD (Article / WebSite)
+- [x] `llms.txt` + `llms-full.txt` pour le référencement IA
+- [x] `robots.txt` référençant le sitemap
+- [x] Page 404 personnalisée
+- [x] Images Markdown : lazy loading + width/height (rehype plugin)
+- [x] Pages RU placeholders en `noindex`
+- [x] Headers de sécurité (HSTS, CSP, Permissions-Policy)
 - [ ] Page « À propos » / biographie des auteurs
 - [ ] Optimisation images (générer des variantes responsive avec `astro:assets` au lieu des fichiers bruts)
 - [ ] Open Graph images générées par chapitre
 - [ ] Bouton « reprendre la lecture » (mémoriser le dernier chapitre lu)
+- [ ] Texte `alt` descriptif sur les images du récit (actuellement vide)
