@@ -22,6 +22,11 @@ const idx = all.findIndex((p) => postSlug(p) === postSlug(post));
 const prev = idx > 0 ? all[idx - 1] : null;
 const next = idx < all.length - 1 ? all[idx + 1] : null;
 
+// version traduite de ce même article (même slug, autre langue)
+const otherLocale: Locale = locale === 'fr' ? 'ru' : 'fr';
+const otherPosts = await getPostsByLocale(otherLocale);
+const translation = otherPosts.find((p) => postSlug(p) === postSlug(post)) ?? null;
+
 const { Content } = await render(post);
 const path = Astro.url.pathname;
 const canonical = new URL(path, Astro.site).href;
@@ -72,6 +77,11 @@ const articleJsonLd = {
           <> · mis à jour {modDatetime.toLocaleDateString(locale === 'fr' ? 'fr-FR' : 'ru-RU', { year: 'numeric', month: 'long', day: 'numeric' })}</>
         )}
       </div>
+      {translation && (
+        <a class="translate-btn" href={postUrl(translation, otherLocale)} hreflang={otherLocale} rel="alternate">
+          {t.switchTo} →
+        </a>
+      )}
     </header>
 
     <div class="container">

@@ -148,6 +148,30 @@ a {
 .prose em { font-style: italic; }
 .prose strong { font-weight: 700; }
 
+/* ---- Transcription de document (lettre, rapport, etc.) ---- */
+.prose .document {
+  margin: 2.5rem 0;
+  padding: 1.5rem 1.75rem;
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-text-muted);
+  background: var(--color-bg-soft);
+  border-radius: var(--radius);
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+.prose .document > *:first-child { margin-top: 0; }
+.prose .document > *:last-child { margin-bottom: 0; }
+.prose .document .doc-label {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 1rem;
+}
+
 /* ---- Layout ---- */
 .container {
   width: 100%;
@@ -365,6 +389,25 @@ a {
 .post-header .post-meta {
   color: var(--color-text-muted);
   font-size: 0.95rem;
+}
+
+/* bouton de changement de langue au niveau de l'article */
+.translate-btn {
+  display: inline-block;
+  margin-top: 1.25rem;
+  padding: 0.4em 1.1em;
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  border-radius: 999px;
+  transition: all 0.15s;
+}
+.translate-btn:hover {
+  background: var(--color-accent);
+  color: #fff;
 }
 
 /* nav prev/next */

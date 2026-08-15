@@ -17,3 +17,6 @@ npm-debug.log*
 
 # Original website files (kept locally, not versioned — source of extraction)
 /fichiersweb/
+
+# Temporary working files (docx translations, extractions)
+/tmp/
