@@ -19,38 +19,30 @@
 
 ## 📗 Étape suivante — Version russe (RU)
 
+### État
+
+- ✅ **1ʳᵉ partie (intro + chapitres 1-10)** intégrée — voir
+  [`scripts/INTEGRATION-RU.md`](scripts/INTEGRATION-RU.md) pour la procédure
+  complète (extraction pandoc → découpage → création des fichiers RU →
+  vérifications). Re-productible telle quelle pour la suite.
+- ⬜ **2ᵉ partie (chapitres 11-25)** : en attente du docx `evasion_2_partie.docx`.
+  La table de correspondance slug -> fichier FR est dans l'annexe de
+  `scripts/INTEGRATION-RU.md`.
+
 ### Comment ajouter le contenu russe
 
-1. Créer un fichier Markdown par chapitre dans `src/content/posts/ru/`
-2. **Garder le même `slug`** que la version FR (ex. `leon.md`, `chapitre-2.md`, `4.md`, etc.)
-3. Reprendre le même frontmatter que le FR, en changeant `lang: "ru"` et en traduisant `title` et `description` :
+Voir [`scripts/INTEGRATION-RU.md`](scripts/INTEGRATION-RU.md) — guide détaillé
+pour intégrer un fichier `.docx` de traduction russe. Résumé :
 
-   ```yaml
-   ---
-   slug: "leon"
-   title: "1. Когда возвращаются воспоминания"
-   chapter: 1
-   pubDatetime: 2020-03-19
-   modDatetime: 2020-05-05
-   description: "..."
-   authors: ["Françoise", "Vladimir"]
-   lang: "ru"
-   ---
-   ```
-
-4. Le corps Markdown est la traduction russe. Les chemins d'images restent inchangés (`/content/images/...`).
-
-### Ce qui se passe automatiquement
-
-- Dès qu'un fichier RU existe pour un slug, la page `/ru/posts/<slug>/` est générée et rendue (police Lora pour le cyrillique).
-- La page d'accueil `/ru/` et `/ru/histoire/` listent les chapitres traduits.
-- Le sélecteur de langue s'active (lien FR ↔ RU cliquable) dès qu'**au moins un** chapitre RU existe.
-- Les balises `hreflang` alternées ne sont émises que lorsque la traduction existe (pas de 404 SEO).
-
-### Questions à trancher pour le RU
-- [ ] Traduire les `title` / `description` ou garder les originaux français en attendant ?
-- [ ] Faut-il des slugs translittérés en russe, ou conserver les slugs français (choix actuel : identiques) ?
-- [ ] Le nom du site en russe est « Побег из Кёнигштайна » (à valider).
+1. Déposer le `.docx` dans `tmp/` (non versionné).
+2. `pandoc` pour extraire le Markdown (`scripts/INTEGRATION-RU.md` §2).
+3. `split.mjs` (script de référence §4) pour découper en sections par chapitre.
+4. Pour chaque section, créer `src/content/posts/ru/<slug>.md` en reprenant le
+   frontmatter du FR correspondant (slug, chapter, dates, authors) + `lang: "ru"`,
+   traduire `title` et `description`, injecter les **mêmes images** que le FR
+   aux positions sémantiques équivalentes.
+5. `npm run build` + vérifications (§6).
+6. Mettre à jour `public/llms.txt` (§7) et cocher ici.
 
 ---
 
