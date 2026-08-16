@@ -25,9 +25,12 @@
   [`INTEGRATION-RU.md`](INTEGRATION-RU.md) pour la procédure
   complète (extraction pandoc → découpage → création des fichiers RU →
   vérifications). Re-productible telle quelle pour la suite.
-- ⬜ **2ᵉ partie (chapitres 11-25)** : en attente du docx `evasion_2_partie.docx`.
-  La table de correspondance slug -> fichier FR est dans l'annexe de
-  `INTEGRATION-RU.md`.
+- ✅ **2ᵉ partie (chapitres 11-24)** intégrée depuis `evasion_2_partie.docx`.
+  Le docx fourni ne contenait que les chapitres 11 à 24 (le chapitre 25
+  « Merci à nos lecteurs » n'était pas dans le fichier). La table de
+  correspondance slug -> fichier FR est dans l'annexe de `INTEGRATION-RU.md`.
+- ⬜ **Chapitre 25 (RU)** : en attente d'une traduction séparée (le docx
+  de la 2ᵉ partie ne le contenait pas).
 
 ### Comment ajouter le contenu russe
 

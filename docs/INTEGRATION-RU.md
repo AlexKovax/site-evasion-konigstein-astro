@@ -328,6 +328,10 @@ Le déploiement Netlify se lance automatiquement sur `master`.
 ## Annexe — Référence rapide pour la 2ᵉ partie (chapitres 11-25)
 
 Le second docx (`evasion_2_partie.docx`) est attendu avec les chapitres 11-25.
+**Note (2ᵉ partie)** : le docx fourni ne contenait en réalité que les chapitres
+11 à 24 (le chapitre 25 « Merci à nos lecteurs » n'y figurait pas). L'intégration
+de la 2ᵉ partie a donc porté sur 14 chapitres ; le ch25 reste à intégrer
+séparément quand sa traduction sera disponible.
 Voici la table de correspondance slug -> fichier FR à préparer :
 
 | Chapter | Slug | Fichier FR de référence |

@@ -2,7 +2,7 @@
 
 > Récit historique familial en 25 chapitres + une introduction, écrit par Françoise & Vladimir
 > (2020–2021). Site web multilingue (français par défaut, version russe partielle :
-> introduction + chapitres 1 à 10 disponibles) publié
+> introduction + chapitres 1 à 24 disponibles) publié
 > avec Astro et déployé sur https://evasion-a-konigstein.site.
 
 Histoire vraie de l'évasion du grand-père Léon Dormois — instituteur lorrain, correspondant
@@ -22,8 +22,8 @@ redirigent en 301 vers les nouvelles routes préfixées `/fr/posts/<slug>/`.
 
 - [Accueil français](https://evasion-a-konigstein.site/fr/): présentation du récit + sommaire chronologique
 - [Sommaire chronologique (FR)](https://evasion-a-konigstein.site/fr/histoire/): tous les chapitres dans l'ordre du récit
-- [Accueil russe](https://evasion-a-konigstein.site/ru/): version russe (introduction + chapitres 1 à 10 traduits)
-- [Sommaire chronologique (RU)](https://evasion-a-konigstein.site/ru/histoire/): version russe du sommaire (intro + ch. 1-10)
+- [Accueil russe](https://evasion-a-konigstein.site/ru/): version russe (introduction + chapitres 1 à 24 traduits)
+- [Sommaire chronologique (RU)](https://evasion-a-konigstein.site/ru/histoire/): version russe du sommaire (intro + ch. 1-24)
 - [Flux RSS](https://evasion-a-konigstein.site/rss.xml): derniers chapitres publiés
 - [Sitemap XML](https://evasion-a-konigstein.site/sitemap-index.xml): plan du site (FR + RU, hreflang)
 - [Contenu complet (llms-full.txt)](https://evasion-a-konigstein.site/llms-full.txt): texte intégral de tous les chapitres concaténés
@@ -63,7 +63,7 @@ apparaît en premier. Les slugs sont les slugs historiques Ghost, conservés tel
 ## Contexte éditorial
 
 - Publié initialement sur un blog Ghost (2020), migré en site statique Astro 7.
-- Multilingue : FR (complet) + RU (introduction + chapitres 1 à 10 disponibles, slugs identiques entre FR et RU).
+- Multilingue : FR (complet) + RU (introduction + chapitres 1 à 24 disponibles, slugs identiques entre FR et RU).
 - Le récit peut aussi être assemblé en livre PDF / EPUB (voir le dépôt GitHub `AlexKovax/site-evasion-konigstein-astro`).
 - Sources d'archives : rapport du colonel von Tschirschky und Bögendorff (octobre 2020),
   lettre de Vladimir, journal de Françoise (2014–2020), documents familiaux.
