@@ -67,7 +67,8 @@ En cas de souci sur une nouvelle partie, le test rapide est :
 > **Note** : le script `split.mjs` n'est pas versionné dans le dépôt (il vit
 > dans `/tmp/opencode/`). Pour le retrouver, voir le commit `e5369c3` (historique
 > Git) ou le réécrire depuis la section 4 de ce document qui reproduit son
-> contenu. **TODO** : le ranger dans `scripts/` pour qu'il soit versionné.
+> contenu. À terme, il pourrait être rangé dans `scripts/` pour qu'il soit
+> versionné.
 
 ## 4. Contenu du script `split.mjs` (de référence)
 
@@ -291,7 +292,7 @@ Le dossier `tmp/` est dans `.gitignore` (depuis le commit `e5369c3`) : le docx
 et les extractions ne sont jamais committés.
 
 ```bash
-git add .gitignore public/llms.txt src/content/posts/ru/ ROADMAP.md
+git add .gitignore public/llms.txt src/content/posts/ru/ docs/ROADMAP.md
 git commit -m "feat(i18n): traduction russe chapitres 11-25"
 git push
 ```

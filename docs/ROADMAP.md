@@ -22,20 +22,20 @@
 ### État
 
 - ✅ **1ʳᵉ partie (intro + chapitres 1-10)** intégrée — voir
-  [`scripts/INTEGRATION-RU.md`](scripts/INTEGRATION-RU.md) pour la procédure
+  [`INTEGRATION-RU.md`](INTEGRATION-RU.md) pour la procédure
   complète (extraction pandoc → découpage → création des fichiers RU →
   vérifications). Re-productible telle quelle pour la suite.
 - ⬜ **2ᵉ partie (chapitres 11-25)** : en attente du docx `evasion_2_partie.docx`.
   La table de correspondance slug -> fichier FR est dans l'annexe de
-  `scripts/INTEGRATION-RU.md`.
+  `INTEGRATION-RU.md`.
 
 ### Comment ajouter le contenu russe
 
-Voir [`scripts/INTEGRATION-RU.md`](scripts/INTEGRATION-RU.md) — guide détaillé
+Voir [`INTEGRATION-RU.md`](INTEGRATION-RU.md) — guide détaillé
 pour intégrer un fichier `.docx` de traduction russe. Résumé :
 
 1. Déposer le `.docx` dans `tmp/` (non versionné).
-2. `pandoc` pour extraire le Markdown (`scripts/INTEGRATION-RU.md` §2).
+2. `pandoc` pour extraire le Markdown (`INTEGRATION-RU.md` §2).
 3. `split.mjs` (script de référence §4) pour découper en sections par chapitre.
 4. Pour chaque section, créer `src/content/posts/ru/<slug>.md` en reprenant le
    frontmatter du FR correspondant (slug, chapter, dates, authors) + `lang: "ru"`,

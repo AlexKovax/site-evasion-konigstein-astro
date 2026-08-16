@@ -31,7 +31,7 @@ de Dannevoux à Moscou, Tachkent et Samarcande).
 - `@astrojs/markdown-remark` (pipeline remark/rehype pour le plugin d'images)
 - Content Collections (`src/content.config.ts`) — un seul loader `glob` sur `src/content/posts`
 - **Polices** via Fontsource : Cardo (serif FR) + Fira Sans (UI), Lora (serif cyrillique RU)
-- **Pandoc** + **WeasyPrint** pour le livre PDF/EPUB (voir `ROADMAP.md`)
+- **Pandoc** + **WeasyPrint** pour le livre PDF/EPUB (voir `docs/ROADMAP.md`)
 
 ## Structure (essentielle)
 
@@ -62,8 +62,11 @@ public/
   robots.txt               # autorise crawl + référence le sitemap
   humans.txt / ai.txt      # métadonnées humaines / politique IA
 netlify.toml              # déploiement + headers + cache + CSP
-ROADMAP.md                # feuille de route (contenu RU + pipeline livre)
-README.md                 # doc projet
+README.md                 # doc projet (démarrage, structure)
+AGENTS.md                 # ce fichier — contexte, conventions, obligations
+docs/                     # documentation projet
+  ROADMAP.md              # feuille de route (contenu RU + pipeline livre)
+  INTEGRATION-RU.md       # procédure d'intégration d'un docx de traduction russe
 ```
 
 ## Conventions à respecter
@@ -147,11 +150,11 @@ npm run book                 # PDF + EPUB
   avoir édité `package.json`.
 
 ### 2. Documentation
-- **Tenir `ROADMAP.md` à jour** : cocher les tâches terminées, en ajouter les nouvelles.
+- **Tenir `docs/ROADMAP.md` à jour** : cocher les tâches terminées, en ajouter les nouvelles.
   C'est le tableau de bord du projet (contenu RU, pipeline livre, améliorations futures).
 - **Mettre à jour ce fichier `AGENTS.md`** si la stack, la structure, ou les conventions
   changent. Un agent qui arrive doit pouvoir tout comprendre en lisant uniquement ce fichier
-  + `README.md` + `ROADMAP.md`.
+  + `README.md` + `docs/ROADMAP.md`.
 - **Mettre à jour `public/_redirects`** à chaque ajout/retrait/renommage de slug d'article.
 - **Mettre à jour `public/llms.txt`** en même temps (index pour LLM / référencement IA,
   qui liste les chapitres dans l'ordre avec leur URL canonique).
@@ -163,7 +166,7 @@ npm run book                 # PDF + EPUB
 - Après déploiement, vérifier les redirects 301 sur les anciennes URLs Ghost
   (ex. `curl -sI https://evasion-konigstein.netlify.app/leon/`).
 
-## À venir (voir ROADMAP.md en détail)
+## À venir (voir `docs/ROADMAP.md` en détail)
 
 1. **Contenu russe** — déposer les `.md` dans `src/content/posts/ru/` (mêmes slugs,
    `lang: "ru"`). Le site RU se construit automatiquement. Le pipeline livre gère

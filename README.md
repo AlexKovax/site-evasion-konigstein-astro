@@ -45,7 +45,7 @@ public/
   favicon.ico
   _redirects             # redirects 301 SEO (anciennes URLs Ghost -> /fr/...)
 netlify.toml             # déploiement Netlify
-ROADMAP.md               # feuille de route (version RU + pipeline livre PDF/EPUB)
+docs/                    # documentation : ROADMAP, procédure d'intégration RU, etc.
 scripts/
   extract.mjs            # extraction Ghost -> Markdown (déjà exécuté)
 ```
@@ -54,7 +54,7 @@ scripts/
 
 - FR est la locale par défaut, préfixée `/fr/`.
 - RU est préfixée `/ru/`. Tant que `src/content/posts/ru/` est vide, les pages RU affichent « traduction à venir » et le sélecteur de langue côté FR reste désactivé.
-- Les slugs sont **identiques** entre FR et RU (seul le contenu change). Voir `ROADMAP.md` pour ajouter le contenu russe.
+- Les slugs sont **identiques** entre FR et RU (seul le contenu change). Voir `docs/ROADMAP.md` et `docs/INTEGRATION-RU.md` pour ajouter le contenu russe.
 
 ## SEO / redirections
 
@@ -68,4 +68,13 @@ Le champ `chapter` (numéro) définit l'ordre du récit ; l'article « Évasion 
 
 ## Pipeline livre (PDF / EPUB)
 
-Prévu dans `ROADMAP.md` — assemblage via **Pandoc** (non branché pour l'instant).
+Prévu dans `docs/ROADMAP.md` — assemblage via **Pandoc** (non branché pour l'instant).
+
+## Documentation
+
+La documentation projet est dans `docs/` :
+
+- [`docs/ROADMAP.md`](docs/ROADMAP.md) — feuille de route (version RU + pipeline livre PDF/EPUB)
+- [`docs/INTEGRATION-RU.md`](docs/INTEGRATION-RU.md) — procédure d'intégration d'un docx de traduction russe
+
+Voir aussi [`AGENTS.md`](AGENTS.md) pour le contexte projet, les conventions et les obligations de tenue à jour.
