@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { UI, COVER_IMAGE, type Locale } from '../../consts';
+import { UI, COVER_IMAGE, SITE_INTRO, type Locale } from '../../consts';
 import { getPostsByLocale, postUrl, postSlug } from '../../lib/posts';
 
 const locale: Locale = 'fr';
@@ -21,7 +21,11 @@ function fmtDate(d: Date) {
   </section>
 
   <section class="container-wide" style="padding-top: 3rem;">
-    <h2 style="font-family: var(--font-ui); font-size: 1.5rem; margin-bottom: 0.5rem;">{t.tableOfContents}</h2>
+    <aside class="intro-editorial">
+      <p set:html={SITE_INTRO[locale].replace(/^(\S)/, '<span class="drop-cap">$1</span>')} />
+    </aside>
+
+    <h2 style="font-family: var(--font-ui); font-size: 1.5rem; margin: 2.5rem 0 0.5rem;">{t.tableOfContents}</h2>
     <ol class="toc">
       {posts.map((post) => (
         <li>

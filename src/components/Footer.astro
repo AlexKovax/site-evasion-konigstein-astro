@@ -7,6 +7,10 @@ const year = new Date().getFullYear();
 <footer class="site-footer">
   <div class="inner">
     <span>© {year} — {t.siteName}</span>
+    <nav class="footer-nav" aria-label={t.navAbout}>
+      <a href={`/${locale}/histoire/`}>{t.navHome}</a>
+      <a href={`/${locale}/a-propos/`}>{t.navAbout}</a>
+    </nav>
     <span>{t.authorBy} {['Françoise', 'Vladimir'].join(' & ')}</span>
   </div>
 </footer>

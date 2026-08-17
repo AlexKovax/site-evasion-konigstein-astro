@@ -1,6 +1,6 @@
 ---
 slug: "24-octobre-2020-le-rapport-du-colonel-friedrichvon-tschirschky-und-bogendorff-commandent-de-koenigstein"
-title: "24. Октябрь 2020 г: доклад коменданта Кёнигштайна полковника Фридриха фон Чиршки унд Бёгендорфа"
+title: "24. Октябрь 2020 г: доклад коменданта Кёнигштайна"
 chapter: 24
 pubDatetime: 2020-11-25
 modDatetime: 2020-11-25

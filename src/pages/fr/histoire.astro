@@ -11,9 +11,9 @@ function fmtDate(d: Date) {
   return d.toLocaleDateString('fr-FR', { year: 'numeric', month: 'short', day: 'numeric' });
 }
 ---
-<BaseLayout locale={locale} title={t.navStory} path={Astro.url.pathname}>
+<BaseLayout locale={locale} title={t.tableOfContents} path={Astro.url.pathname}>
   <section class="container" style="padding-top: 3rem;">
-    <h1 style="font-family: var(--font-ui); font-weight: 700; font-size: 2.5rem; margin: 0 0 0.5rem;">{t.navStory}</h1>
+    <h1 style="font-family: var(--font-ui); font-weight: 700; font-size: 2.5rem; margin: 0 0 0.5rem;">{t.tableOfContents}</h1>
     <p style="font-family: var(--font-serif); font-size: 1.2rem; color: var(--color-text-muted); margin-bottom: 2rem;">{t.tagline}</p>
     <ol class="toc">
       {posts.map((post) => (

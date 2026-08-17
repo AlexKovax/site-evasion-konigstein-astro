@@ -7,7 +7,7 @@ const locale: Locale = 'ru';
 const t = UI[locale];
 const posts = await getPostsByLocale(locale);
 ---
-<BaseLayout locale={locale} title={t.navStory} path={Astro.url.pathname} noindex={posts.length === 0}>
+<BaseLayout locale={locale} title={t.tableOfContents} path={Astro.url.pathname} noindex={posts.length === 0}>
   {posts.length === 0 ? (
     <div class="translation-pending">{t.translationPending}</div>
   ) : (

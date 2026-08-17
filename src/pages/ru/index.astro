@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { UI, COVER_IMAGE, type Locale } from '../../consts';
+import { UI, COVER_IMAGE, SITE_INTRO, type Locale } from '../../consts';
 import { getPostsByLocale } from '../../lib/posts';
 
 const locale: Locale = 'ru';
@@ -16,10 +16,16 @@ const posts = await getPostsByLocale(locale);
     </div>
   </section>
 
+  <section class="container-wide" style="padding-top: 3rem;">
+    <aside class="intro-editorial">
+      <p set:html={SITE_INTRO[locale].replace(/^(\S)/, '<span class="drop-cap">$1</span>')} />
+    </aside>
+  </section>
+
   {posts.length === 0 ? (
     <div class="translation-pending">{t.translationPending}</div>
   ) : (
-    <section class="container-wide" style="padding-top: 3rem;">
+    <section class="container-wide">
       <ol class="toc">
         {posts.map((post) => (
           <li>

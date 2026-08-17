@@ -1,6 +1,6 @@
 ---
 slug: "24-octobre-2020-le-rapport-du-colonel-friedrichvon-tschirschky-und-bogendorff-commandent-de-koenigstein"
-title: "24. Octobre 2020 : le rapport du colonel Friedrich von Tschirschky und Bögendorff, commandant de Koenigstein"
+title: "24. Octobre 2020 : le rapport du commandant de Koenigstein"
 chapter: 24
 pubDatetime: 2020-11-25
 modDatetime: 2020-11-25

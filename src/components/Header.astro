@@ -21,8 +21,8 @@ const isActive = (href: string) =>
   <nav class="site-nav" aria-label={t.navHome}>
     <a class="brand" href={`/${locale}/`}>{t.siteName}</a>
     <ul>
-      <li><a href={`/${locale}/`} class={isActive(`/${locale}/`) ? 'active' : ''}>{t.navHome}</a></li>
-      <li><a href={`/${locale}/histoire/`} class={isActive(`/${locale}/histoire/`) ? 'active' : ''}>{t.navStory}</a></li>
+      <li><a href={`/${locale}/histoire/`} class={isActive(`/${locale}/histoire/`) ? 'active' : ''}>{t.navHome}</a></li>
+      <li><a href={`/${locale}/a-propos/`} class={isActive(`/${locale}/a-propos/`) ? 'active' : ''}>{t.navAbout}</a></li>
       <li>
         {hasOtherVersion ? (
           <a class="lang-switch" href={`/${otherLocale}/`} hreflang={otherLocale} rel="alternate">

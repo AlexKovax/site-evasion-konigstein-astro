@@ -465,6 +465,95 @@ a {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 1rem;
+  align-items: center;
+}
+.site-footer .footer-nav {
+  display: flex;
+  gap: 1.25rem;
+}
+.site-footer .footer-nav a {
+  text-decoration: none;
+  color: var(--color-text-muted);
+}
+.site-footer .footer-nav a:hover {
+  color: var(--color-accent);
+}
+
+/* ---- Encadré de présentation (accueil + À propos) ---- */
+.intro-box {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 1.5rem 1.75rem;
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-accent);
+  background: var(--color-bg-soft);
+  border-radius: var(--radius);
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--color-text-soft);
+}
+.intro-box p {
+  margin: 0;
+}
+
+.about-pending {
+  margin-top: 2rem;
+  color: var(--color-text-muted);
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  font-style: italic;
+  text-align: center;
+}
+
+/* ---- Encadré éditorial (accueil) : lettrine + bandeau accent ---- */
+.intro-editorial {
+  position: relative;
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 2.25rem 0 2rem;
+  border-top: 2px solid var(--color-accent);
+  border-bottom: 1px solid var(--color-border);
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--color-text-soft);
+}
+.intro-editorial::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 4rem;
+  height: 2px;
+  background: var(--color-text);
+}
+.intro-editorial p {
+  margin: 0;
+}
+.intro-editorial .drop-cap {
+  float: left;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 3.6rem;
+  line-height: 0.85;
+  padding: 0.25rem 0.6rem 0 0;
+  margin-top: 0.1rem;
+  color: var(--color-accent);
+}
+:root[lang='ru'] .intro-editorial .drop-cap,
+[lang='ru'] .intro-editorial .drop-cap {
+  font-size: 3.2rem;
+}
+
+@media (max-width: 640px) {
+  .intro-editorial {
+    font-size: 1.1rem;
+    padding: 1.75rem 0 1.5rem;
+  }
+  .intro-editorial .drop-cap {
+    font-size: 2.8rem;
+  }
 }
 
 /* ---- Étiquette traduction à venir ---- */
