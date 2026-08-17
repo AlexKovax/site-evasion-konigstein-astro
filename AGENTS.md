@@ -73,11 +73,17 @@ docs/                     # documentation projet
 
 ### Contenu
 - Un article = un fichier `src/content/posts/<lang>/<slug>.md`.
-- **Slugs identiques** entre FR et RU (seul le contenu change). Ne pas translittérer.
+- **Slugs identiques** entre FR et RU pour les chapitres communs (seul le contenu
+  change). Ne pas translittérer. Les deux versions **peuvent cependant diverger** :
+  certains chapitres FR peuvent ne pas être traduits en RU (ex. chapitre 25
+  « Merci à nos lecteurs » reste FR-only), et le RU peut contenir des articles
+  sans équivalent FR (ex. annexe « Приложение » sur la famille Bennigsen).
 - Frontmatter obligatoire : `slug`, `title`, `chapter` (sauf intro), `pubDatetime`,
   `modDatetime`, `description`, `authors`, `lang`. Voir le schéma `content.config.ts`.
 - `chapter` (entier) définit l'ordre du récit. L'article sans `chapter` (intro
   « Évasion à Königstein ») apparaît en **premier** dans les sommaires.
+  Les articles marqués `appendix: true` apparaissent en **dernier** (après tous
+  les chapitres numérotés), utile pour les annexes propres à une langue.
 - Les chemins d'images dans le Markdown sont **absolus** (`/content/images/...`).
 - **Auteurs partout** : `["Françoise", "Vladimir"]` (ne pas créer de page auteur).
 

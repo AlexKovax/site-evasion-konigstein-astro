@@ -24,6 +24,9 @@ const posts = defineCollection({
     lang: z.enum(['fr', 'ru']).default('fr'),
     // image de couverture optionnelle (chemin public)
     cover: z.string().optional(),
+    // Annexe : article apparaissant APRES les chapitres numérotés dans le sommaire
+    // (contrairement à l'introduction sans `chapter` qui apparaît en premier).
+    appendix: z.boolean().default(false),
   }),
 });
 

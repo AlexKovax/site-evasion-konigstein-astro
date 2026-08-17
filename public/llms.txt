@@ -2,7 +2,7 @@
 
 > Récit historique familial en 25 chapitres + une introduction, écrit par Françoise & Vladimir
 > (2020–2021). Site web multilingue (français par défaut, version russe partielle :
-> introduction + chapitres 1 à 24 disponibles) publié
+> introduction + chapitres 1 à 24 disponibles, plus une annexe russe sans équivalent français) publié
 > avec Astro et déployé sur https://evasion-a-konigstein.site.
 
 Histoire vraie de l'évasion du grand-père Léon Dormois — instituteur lorrain, correspondant
@@ -60,10 +60,14 @@ apparaît en premier. Les slugs sont les slugs historiques Ghost, conservés tel
 - [24. Octobre 2020 : le rapport du colonel Friedrich von Tschirschky und Bögendorff, commandant de Koenigstein](https://evasion-a-konigstein.site/fr/posts/24-octobre-2020-le-rapport-du-colonel-friedrichvon-tschirschky-und-bogendorff-commandent-de-koenigstein/): rapport du commandant de Königstein, document d'archives retrouvé
 - [25. Merci à nos lecteurs](https://evasion-a-konigstein.site/fr/posts/25-merci-a-nos-lecteurs/): remerciements aux lecteurs et aux contributeurs
 
+## Annexes
+
+- [Приложение (RU uniquement)](https://evasion-a-konigstein.site/ru/posts/prilozhenie/): « Граф Беннигсен, такая русская история » — destin de la famille Bennigsen (de Königstein à l'émigration et à la tragédie des sœurs Bennigsen dans la Russie révolutionnaire). Article russe sans équivalent français.
+
 ## Contexte éditorial
 
 - Publié initialement sur un blog Ghost (2020), migré en site statique Astro 7.
-- Multilingue : FR (complet) + RU (introduction + chapitres 1 à 24 disponibles, slugs identiques entre FR et RU).
+- Multilingue : FR (complet) + RU (introduction + chapitres 1 à 24 disponibles, slugs identiques entre FR et RU ; plus une annexe « Приложение » propre au RU).
 - Le récit peut aussi être assemblé en livre PDF / EPUB (voir le dépôt GitHub `AlexKovax/site-evasion-konigstein-astro`).
 - Sources d'archives : rapport du colonel von Tschirschky und Bögendorff (octobre 2020),
   lettre de Vladimir, journal de Françoise (2014–2020), documents familiaux.

@@ -7,11 +7,18 @@ export type Post = CollectionEntry<'posts'>;
 export async function getPostsByLocale(locale: Locale): Promise<Post[]> {
   const all = await getCollection('posts', (e) => e.data.lang === locale);
   return all.sort((a, b) => {
-    // ordre du récit : l'introduction (chapter null) en premier,
-    // puis les chapitres numérotés, puis par date.
-    const ca = a.data.chapter ?? -1;
-    const cb = b.data.chapter ?? -1;
-    if (ca !== cb) return ca - cb;
+    // ordre du récit :
+    //   1. introduction (chapter null, appendix false) en premier
+    //   2. chapitres numérotés (par numéro, puis par date)
+    //   3. annexes (appendix true) en dernier, par date
+    const rankA = a.data.appendix ? 2 : a.data.chapter == null ? 0 : 1;
+    const rankB = b.data.appendix ? 2 : b.data.chapter == null ? 0 : 1;
+    if (rankA !== rankB) return rankA - rankB;
+    if (rankA === 1) {
+      const ca = a.data.chapter ?? 0;
+      const cb = b.data.chapter ?? 0;
+      if (ca !== cb) return ca - cb;
+    }
     return a.data.pubDatetime.getTime() - b.data.pubDatetime.getTime();
   });
 }
