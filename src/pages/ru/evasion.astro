@@ -1,0 +1,606 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { UI, type Locale } from '../../consts';
+
+const locale: Locale = 'ru';
+const t = UI[locale];
+
+// Этапы побега (интерактивная карта).
+const waypoints = [
+  {
+    id: 'konigstein',
+    num: 1,
+    x: 430,
+    y: 215,
+    label: 'Кёнигштайн',
+    title: 'Кёнигштайн — крепость',
+    date: 'Ночь с 14 на 15 мая 1915 года, около 2 часов утра',
+    text: 'Пленные с августа 1914 года, Леон Дормуа и Владимир Габбин готовили побег несколько месяцев. Верёвка, сплетённая из шнурков, бечёвки и ткани, собиралась в вентиляционном коробе под лазаретом. В ту ночь гроза скрывала их бегство.',
+  },
+  {
+    id: 'descente',
+    num: 2,
+    x: 430,
+    y: 300,
+    label: 'Спуск',
+    title: 'Спуск со стены',
+    date: 'Около 2–3 часов утра',
+    text: 'Они ощупывают скалу и выбирают амбразуру между Фридрихсбургом и Новым арсеналом. Обвив верёвку вокруг железной перекладины, они поочерёдно соскальзывают к скалистому карнизу, шестнадцатью метрами ниже. Два русских офицера помогают им, затем перерезают верёвку.',
+  },
+  {
+    id: 'bielagrund',
+    num: 3,
+    x: 412,
+    y: 360,
+    label: 'Биелагрунд',
+    title: 'Биелагрунд — к границе',
+    date: '15 мая 1915 года, на рассвете',
+    text: 'Они идут на юг, к Праге, где у Габбина есть знакомый. Избегая дорог и городов, они поднимаются по Биелагрунду выше границы между Саксонией и Богемией. Около 35–40 километров, шестнадцать часов пути по горной местности.',
+  },
+  {
+    id: 'peterswalde',
+    num: 4,
+    x: 400,
+    y: 405,
+    label: 'Петерсвальде',
+    title: 'Петерсвальде — арест',
+    date: '15 мая 1915 года, после полудня',
+    text: 'Их задерживает австрийский жандарм: подозрительный выдаёт их внешний вид. Они признаются, что бежали из Кёнигштайна. По дороге жандарм показывает им памятник при Кульме — память о победе 1813 года над Наполеоном.',
+  },
+  {
+    id: 'leitmeritz',
+    num: 5,
+    x: 355,
+    y: 545,
+    label: 'Лейтмериц',
+    title: 'Лейтмериц (Литомержице)',
+    date: '16 мая 1915 года',
+    text: 'Доставленные в Лейтмериц, жандармы ведут себя «по-джентльменски»: сначала приносят им меню, затем ведут в ресторан. На следующий день — перевод в Кёнигштайн.',
+  },
+  {
+    id: 'retour',
+    num: 6,
+    x: 430,
+    y: 215,
+    label: 'Возвращение',
+    title: 'Возвращение в Кёнигштайн',
+    date: '16 мая 1915 года',
+    text: 'Их везут обратно поездом, «тут уже не до шуток». Толпа смотрит, как они проходят; дети смеются, но мать заставляет их замолчать. Леона сажают в камеру, часовой берёт его на мушку при малейшем движении.',
+  },
+  {
+    id: 'dresde',
+    num: 7,
+    x: 150,
+    y: 95,
+    label: 'Дрезден',
+    title: 'Дрезден — военный трибунал',
+    date: '29 мая 1915 года',
+    text: 'Их приговаривают к двум месяцам крепости… в Кёнигштайне. Комендант удивляется: они ведь уже там! Второй суд отправляет их в дрезденскую тюрьму, «кормили плохо, ели сельдь».',
+  },
+];
+
+// Две параллельные судьбы.
+const timeline = [
+  { side: 'leon', year: '1891', title: 'Рождение в Сиври-сюр-Мёз', text: 'Леон Дормуа рождается в длинной линии лотарингских крестьян. Учитель, гимнаст высокого класса, он оканчивает нормальную школу в 19 лет.' },
+  { side: 'vladimir', year: '~1890', title: 'Детство в Ташкенте', text: 'Владимир Габбин, сын генерала Николая Габбина, растёт в Туркестане, в большом доме с фруктовым садом. «Потерянный рай».' },
+  { side: 'leon', year: 'Август 1914', title: 'Приграничное сражение', text: 'Подпоручик запаса 25-го батальона егерей, он попадает в плен 24 августа 1914 года.' },
+  { side: 'vladimir', year: 'Август 1914', title: 'Битва при Танненберге', text: 'Офицер 2-й армии Самсонова, он попадает в плен в лесах Мазурии. 30 000 русских взяты в плен.' },
+  { side: 'both', year: '1914–1915', title: 'Кёнигштайн', text: 'Двое мужчин встречаются в крепости. «Вы ведь тоже хотели бы сбежать, а?» Они говорят по-немецки и готовят побег.' },
+  { side: 'both', year: '15 мая 1915', title: 'Побег', text: 'Ночью они спускаются со стены по верёвке и идут к Праге. Задержанные в Петерсвальде, их возвращают и судят в Дрездене.' },
+  { side: 'leon', year: '1918', title: 'Возвращение', text: 'Интернирован в Швейцарии, он репатриирован 25 ноября 1918 года. Он женится на Клотильде и становится учителем в Даннво.' },
+  { side: 'vladimir', year: '1919', title: 'Выбор России', text: 'После войны он решает вернуться в Россию, а не оставаться беженцем в Германии. Он прибывает в Москву в 1919 году.' },
+  { side: 'leon', year: '1920-е годы', title: 'Письмо из Москвы', text: 'Владимир пишет ему, описывает нищету и спрашивает, может ли он приехать во Францию. Леон отвечает, что не может его принять.' },
+  { side: 'vladimir', year: '1920-е годы', title: 'Письмо Леону', text: 'Он делает зажигалки, чтобы выжить. Отказ Леона ранит его — он никогда не расскажет об этом сыну.' },
+  { side: 'leon', year: '1971', title: 'Конец жизни', text: 'Леон умирает в Даннво, после более чем тридцати лет обучения поколений учеников.' },
+  { side: 'vladimir', year: '1977', title: 'Инженер Большого театра', text: 'Владимир пережил чистки. Инженер-электрик в театрах Москвы, он умирает в 1977 году.' },
+];
+---
+
+<BaseLayout
+  locale={locale}
+  title="Побег — интерактивная карта"
+  description="В ночь на 15 мая 1915 года двое пленных офицеров спускаются со стены крепости Кёнигштайн. Проследите их маршрут, этап за этапом."
+  path={Astro.url.pathname}
+>
+  <section class="evasion-hero">
+    <div class="container-wide">
+      <p class="kicker">15 мая 1915 · Кёнигштайн</p>
+      <h1>Побег Леона и Владимира</h1>
+      <p class="lede">
+        В ночь с 14 на 15 мая 1915 года двое пленных офицеров — лотарингский учитель
+        и русский офицер из Туркестана — спускаются со стены крепости, считавшейся
+        неприступной. Проследите их путь, этап за этапом.
+      </p>
+    </div>
+  </section>
+
+  <section class="container-wide map-section">
+    <div class="map-layout">
+      <figure class="map-figure">
+        <svg
+          class="map"
+          viewBox="0 0 800 640"
+          role="img"
+          aria-label="Карта маршрута побега из Кёнигштайна в Лейтмериц, затем возвращение в Дрезден"
+        >
+          <defs>
+            <linearGradient id="river" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="var(--map-river)" stop-opacity="0.9" />
+              <stop offset="1" stop-color="var(--map-river)" stop-opacity="0.5" />
+            </linearGradient>
+          </defs>
+
+          <!-- фон / рельеф -->
+          <rect class="map-bg" x="0" y="0" width="800" height="640" rx="6" />
+          <g class="terrain">
+            <path d="M0 300 Q 120 250 240 300 T 480 300 T 800 290 L 800 640 L 0 640 Z" />
+            <path d="M0 420 Q 160 380 320 430 T 640 430 T 800 420 L 800 640 L 0 640 Z" />
+            <path d="M0 520 Q 200 480 400 530 T 800 520 L 800 640 L 0 640 Z" />
+          </g>
+
+          <!-- граница Саксония / Богемия -->
+          <line class="border-line" x1="40" y1="365" x2="760" y2="365" />
+          <text class="border-label" x="760" y="355" text-anchor="end">Саксония</text>
+          <text class="border-label" x="760" y="385" text-anchor="end">Богемия</text>
+
+          <!-- Эльба -->
+          <path
+            class="river"
+            d="M 355 560 C 375 505 400 430 418 350 C 428 300 432 260 430 215 C 400 175 280 120 150 95 C 100 78 55 68 20 62"
+          />
+          <text class="river-label" x="300" y="150" transform="rotate(-28 300 150)">Эльба</text>
+
+          <!-- маршрут побега -->
+          <path
+            class="route route-escape"
+            d="M 430 215 C 420 260 428 300 412 345 L 400 405 C 390 455 372 505 355 545"
+          />
+          <!-- маршрут возвращения -->
+          <path
+            class="route route-return"
+            d="M 355 545 C 372 505 390 455 400 405 C 410 350 420 300 430 215 C 400 175 280 120 150 95"
+          />
+
+          <!-- точки этапов -->
+          {waypoints.map((wp) => (
+            <g class="wp-marker" data-wp={wp.id} tabindex="0" role="button" aria-label={wp.title}>
+              <circle class="wp-halo" cx={wp.x} cy={wp.y} r="16" />
+              <circle class="wp-dot" cx={wp.x} cy={wp.y} r="11" />
+              <text class="wp-num" x={wp.x} y={wp.y + 4} text-anchor="middle">{wp.num}</text>
+              <text class="wp-label" x={wp.x} y={wp.y - 22} text-anchor="middle">{wp.label}</text>
+            </g>
+          ))}
+
+          <!-- роза ветров -->
+          <g class="compass" transform="translate(720 60)">
+            <circle r="26" />
+            <path d="M0 -20 L6 0 L0 20 L-6 0 Z" />
+            <text y="-30" text-anchor="middle">С</text>
+          </g>
+        </svg>
+        <figcaption>
+          Маршрут реконструирован по рассказу Леона и рапорту полковника фон Чиршки.
+          Нажмите на этап, чтобы прочитать подробности.
+        </figcaption>
+      </figure>
+
+      <aside class="map-panel" aria-live="polite">
+        {waypoints.map((wp) => (
+          <article class="wp-card" data-wp={wp.id}>
+            <span class="wp-card-num">{wp.num}</span>
+            <h2>{wp.title}</h2>
+            <p class="wp-card-date">{wp.date}</p>
+            <p class="wp-card-text">{wp.text}</p>
+          </article>
+        ))}
+        <div class="map-controls">
+          <button type="button" class="play-btn" id="play-btn">▶ Повторить маршрут</button>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="container-wide timeline-section">
+    <h2 class="section-title">Две судьбы, одна ночь</h2>
+    <p class="section-sub">
+      Две жизни, которые война соединила в Кёнигштайне, а затем развела.
+      Пролистайте историю Леона и Владимира.
+    </p>
+
+    <div class="timeline">
+      {timeline.map((ev) => (
+        <div class={`tl-item tl-${ev.side}`}>
+          <div class="tl-marker" />
+          <div class="tl-card">
+            <span class="tl-year">{ev.year}</span>
+            <h3>{ev.title}</h3>
+            <p>{ev.text}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .evasion-hero {
+    padding: 4rem 0 2rem;
+    text-align: center;
+  }
+  .evasion-hero .kicker {
+    font-family: var(--font-ui);
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin: 0 0 1rem;
+    font-size: 0.9rem;
+  }
+  .evasion-hero h1 {
+    font-family: var(--font-ui);
+    font-weight: 700;
+    font-size: clamp(2.25rem, 5vw, 3.75rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin: 0 0 1.25rem;
+  }
+  .evasion-hero .lede {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    line-height: 1.7;
+    color: var(--color-text-soft);
+    max-width: 46rem;
+    margin: 0 auto;
+  }
+
+  .map-section {
+    padding: 2rem 0 4rem;
+  }
+  .map-layout {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+  .map-figure {
+    margin: 0;
+  }
+  .map-figure figcaption {
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-top: 0.75rem;
+  }
+
+  .map {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* переменные карты (светлая / тёмная темы) */
+  .map {
+    --map-bg: #f4efe4;
+    --map-terrain: #e7dfcd;
+    --map-river: #7fa8c9;
+    --map-route: #e05431;
+    --map-return: #909499;
+    --map-border: #b7a98c;
+    --map-label: #6b6252;
+  }
+  @media (prefers-color-scheme: dark) {
+    .map {
+      --map-bg: #2a2c2e;
+      --map-terrain: #33352f;
+      --map-river: #5b7f9c;
+      --map-route: #e05431;
+      --map-return: #909499;
+      --map-border: #6b6252;
+      --map-label: #c4c7cc;
+    }
+  }
+
+  .map-bg { fill: var(--map-bg); }
+  .terrain path { fill: var(--map-terrain); opacity: 0.6; }
+
+  .border-line {
+    stroke: var(--map-border);
+    stroke-width: 1.5;
+    stroke-dasharray: 6 5;
+  }
+  .border-label {
+    font-family: var(--font-ui);
+    font-size: 12px;
+    fill: var(--map-label);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .river {
+    fill: none;
+    stroke: url(#river);
+    stroke-width: 14;
+    stroke-linecap: round;
+    opacity: 0.85;
+  }
+  .river-label {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 15px;
+    fill: var(--map-river);
+  }
+
+  .route {
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .route-escape {
+    stroke: var(--map-route);
+    stroke-width: 3;
+    stroke-dasharray: 8 6;
+    animation: dash 1.2s linear infinite;
+  }
+  .route-return {
+    stroke: var(--map-return);
+    stroke-width: 2.5;
+    stroke-dasharray: 3 7;
+  }
+  @keyframes dash {
+    to { stroke-dashoffset: -14; }
+  }
+
+  .wp-marker { cursor: pointer; }
+  .wp-halo {
+    fill: var(--map-bg);
+    stroke: var(--map-route);
+    stroke-width: 2;
+    opacity: 0;
+    transition: opacity 0.15s;
+  }
+  .wp-dot {
+    fill: var(--map-route);
+    stroke: var(--map-bg);
+    stroke-width: 2;
+    transition: transform 0.15s;
+  }
+  .wp-num {
+    font-family: var(--font-ui);
+    font-weight: 700;
+    font-size: 12px;
+    fill: #fff;
+    pointer-events: none;
+  }
+  .wp-label {
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 500;
+    fill: var(--map-label);
+    pointer-events: none;
+  }
+  .wp-marker:hover .wp-dot,
+  .wp-marker.active .wp-dot {
+    transform: scale(1.25);
+  }
+  .wp-marker:hover .wp-halo,
+  .wp-marker.active .wp-halo {
+    opacity: 0.35;
+  }
+  .wp-marker.active .wp-label {
+    fill: var(--map-route);
+    font-weight: 700;
+  }
+
+  .compass circle {
+    fill: var(--map-bg);
+    stroke: var(--map-border);
+    stroke-width: 1.5;
+  }
+  .compass path { fill: var(--map-route); }
+  .compass text {
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 700;
+    fill: var(--map-label);
+  }
+
+  .map-panel {
+    position: sticky;
+    top: 5rem;
+    border: 1px solid var(--color-border);
+    border-left: 3px solid var(--color-accent);
+    border-radius: var(--radius);
+    background: var(--color-bg-soft);
+    padding: 1.75rem;
+    min-height: 20rem;
+  }
+  .wp-card { display: none; }
+  .wp-card.active { display: block; animation: fade 0.3s ease; }
+  @keyframes fade {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: none; }
+  }
+  .wp-card-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: var(--color-accent);
+    color: #fff;
+    font-family: var(--font-ui);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+  .wp-card h2 {
+    font-family: var(--font-ui);
+    font-size: 1.35rem;
+    margin: 0 0 0.4rem;
+    line-height: 1.25;
+  }
+  .wp-card-date {
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    color: var(--color-accent);
+    font-weight: 500;
+    margin: 0 0 0.75rem;
+  }
+  .wp-card-text {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--color-text-soft);
+    margin: 0;
+  }
+  .map-controls { margin-top: 1.5rem; }
+  .play-btn {
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.5em 1.1em;
+    color: var(--color-accent);
+    background: transparent;
+    border: 1px solid var(--color-accent);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .play-btn:hover {
+    background: var(--color-accent);
+    color: #fff;
+  }
+
+  .timeline-section {
+    padding: 3rem 0 4rem;
+    border-top: 1px solid var(--color-border);
+  }
+  .section-title {
+    font-family: var(--font-ui);
+    font-weight: 700;
+    font-size: 2rem;
+    margin: 0 0 0.5rem;
+    text-align: center;
+  }
+  .section-sub {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    color: var(--color-text-muted);
+    text-align: center;
+    max-width: 40rem;
+    margin: 0 auto 3rem;
+  }
+
+  .timeline {
+    position: relative;
+    max-width: 46rem;
+    margin: 0 auto;
+    padding-left: 1.5rem;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0.5rem;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--color-border);
+  }
+  .tl-item {
+    position: relative;
+    padding: 0 0 1.75rem 2rem;
+  }
+  .tl-marker {
+    position: absolute;
+    left: -1.5rem;
+    top: 0.4rem;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: var(--color-bg);
+    border: 2px solid var(--color-accent);
+  }
+  .tl-both .tl-marker {
+    background: var(--color-accent);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-accent) 25%, transparent);
+  }
+  .tl-vladimir .tl-marker {
+    border-color: var(--map-river);
+  }
+  .tl-card {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 1.1rem 1.25rem;
+    background: var(--color-bg-elevated);
+  }
+  .tl-both .tl-card {
+    border-left: 3px solid var(--color-accent);
+    background: var(--color-bg-soft);
+  }
+  .tl-year {
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--color-accent);
+    text-transform: uppercase;
+  }
+  .tl-card h3 {
+    font-family: var(--font-ui);
+    font-size: 1.15rem;
+    margin: 0.25rem 0 0.4rem;
+  }
+  .tl-card p {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--color-text-soft);
+    margin: 0;
+  }
+
+  @media (max-width: 860px) {
+    .map-layout { grid-template-columns: 1fr; }
+    .map-panel { position: static; }
+  }
+</style>
+
+<script>
+  const markers = document.querySelectorAll('.wp-marker');
+  const cards = document.querySelectorAll('.wp-card');
+  const playBtn = document.getElementById('play-btn');
+  const ids = Array.from(markers).map((m) => m.dataset.wp);
+
+  function select(id) {
+    cards.forEach((c) => c.classList.toggle('active', c.dataset.wp === id));
+    markers.forEach((m) => m.classList.toggle('active', m.dataset.wp === id));
+  }
+
+  markers.forEach((m) => {
+    m.addEventListener('click', () => select(m.dataset.wp));
+    m.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        select(m.dataset.wp);
+      }
+    });
+  });
+
+  let timer = null;
+  playBtn.addEventListener('click', () => {
+    if (timer) {
+      clearInterval(timer);
+      timer = null;
+      playBtn.textContent = '▶ Повторить маршрут';
+      return;
+    }
+    let i = 0;
+    select(ids[0]);
+    playBtn.textContent = '■ Остановить';
+    timer = setInterval(() => {
+      i = (i + 1) % ids.length;
+      select(ids[i]);
+    }, 2200);
+  });
+
+  select(ids[0]);
+</script>

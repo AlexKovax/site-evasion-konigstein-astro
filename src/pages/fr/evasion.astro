@@ -1,0 +1,606 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { UI, type Locale } from '../../consts';
+
+const locale: Locale = 'fr';
+const t = UI[locale];
+
+// Étapes de l'évasion (carte interactive).
+const waypoints = [
+  {
+    id: 'konigstein',
+    num: 1,
+    x: 430,
+    y: 215,
+    label: 'Königstein',
+    title: 'Königstein — la forteresse',
+    date: 'Nuit du 14 au 15 mai 1915, vers 2 h du matin',
+    text: 'Prisonniers depuis août 1914, Léon Dormois et Vladimir Gabbine ont préparé leur évasion pendant des mois. Une corde tressée de lacets, de ficelles et de tissu, assemblée dans une gaine d’aération sous l’infirmerie. Cette nuit-là, une tempête couvre leur fuite.',
+  },
+  {
+    id: 'descente',
+    num: 2,
+    x: 430,
+    y: 300,
+    label: 'La descente',
+    title: 'La descente du mur',
+    date: 'Vers 2–3 h du matin',
+    text: 'Ils sondent la falaise et choisissent une meurtrière entre le Friedrichsburg et la Nouvelle Armurerie. La corde enroulée autour d’une traverse de fer, ils glissent l’un après l’autre jusqu’à une corniche rocheuse, seize mètres plus bas. Deux officiers russes les aident, puis coupent la corde.',
+  },
+  {
+    id: 'bielagrund',
+    num: 3,
+    x: 412,
+    y: 360,
+    label: 'Bielagrund',
+    title: 'Bielagrund — vers la frontière',
+    date: '15 mai 1915, à l’aube',
+    text: 'Ils marchent vers le sud, vers Prague où Gabbine a une connaissance. Évitant routes et villes, ils remontent le Bielagrund au-dessus de la frontière entre la Saxe et la Bohême. Environ 35 à 40 kilomètres, seize heures de marche en terrain montagneux.',
+  },
+  {
+    id: 'peterswalde',
+    num: 4,
+    x: 400,
+    y: 405,
+    label: 'Peterswalde',
+    title: 'Peterswalde — l’arrestation',
+    date: '15 mai 1915, dans l’après-midi',
+    text: 'Un gendarme autrichien les arrête : leur apparence suspecte les trahit. Ils avouent s’être évadés de Königstein. Sur la route, le gendarme leur montre le monument de Kulm, souvenir de la victoire de 1813 sur Napoléon.',
+  },
+  {
+    id: 'leitmeritz',
+    num: 5,
+    x: 355,
+    y: 545,
+    label: 'Leitmeritz',
+    title: 'Leitmeritz (Litoměřice)',
+    date: '16 mai 1915',
+    text: 'Conduits à Leitmeritz, les gendarmes se montrent « chics » : ils leur apportent d’abord un menu, puis les emmènent au restaurant. Le lendemain, transfert vers Königstein.',
+  },
+  {
+    id: 'retour',
+    num: 6,
+    x: 430,
+    y: 215,
+    label: 'Retour',
+    title: 'Retour à Königstein',
+    date: '16 mai 1915',
+    text: 'Ramenés par le train, « là, ça ne rigole plus ». La population les regarde passer ; des enfants se moquent, une mère les fait taire. Léon est mis en cellule, gardé par une sentinelle qui le met en joue au moindre geste.',
+  },
+  {
+    id: 'dresde',
+    num: 7,
+    x: 150,
+    y: 95,
+    label: 'Dresde',
+    title: 'Dresde — le conseil de guerre',
+    date: '29 mai 1915',
+    text: 'Condamnés à deux mois de forteresse… à Königstein. Le commandant s’en étonne : ils y étaient déjà ! Un second conseil les envoie à la prison de Dresde, « mal nourris, on mangeait des harengs ».',
+  },
+];
+
+// Deux destins parallèles.
+const timeline = [
+  { side: 'leon', year: '1891', title: 'Naissance à Sivry-sur-Meuse', text: 'Léon Dormois naît dans une longue lignée de paysans lorrains. Instituteur, gymnaste de haut niveau, il sort de l’École normale à 19 ans.' },
+  { side: 'vladimir', year: '~1890', title: 'Une enfance à Tachkent', text: 'Vladimir Gabbine, fils du général Nikolaï Gabbine, grandit au Turkestan, dans une grande maison entourée d’un verger. « Un paradis perdu. »' },
+  { side: 'leon', year: 'Août 1914', title: 'La Bataille des Frontières', text: 'Sous-lieutenant de réserve au 25e bataillon de chasseurs à pied, il est fait prisonnier le 24 août 1914.' },
+  { side: 'vladimir', year: 'Août 1914', title: 'La bataille de Tannenberg', text: 'Officier de la 2e armée de Samsonov, il est fait prisonnier dans les forêts de Mazurie. 30 000 Russes sont capturés.' },
+  { side: 'both', year: '1914–1915', title: 'Königstein', text: 'Les deux hommes se rencontrent à la forteresse. « Vous voudriez bien vous évader, hein, vous aussi ? » Ils parlent allemand ensemble et préparent leur fuite.' },
+  { side: 'both', year: '15 mai 1915', title: 'L’évasion', text: 'La nuit, ils descendent le mur à la corde et marchent vers Prague. Arrêtés à Peterswalde, ils sont ramenés et jugés à Dresde.' },
+  { side: 'leon', year: '1918', title: 'Le retour', text: 'Interné en Suisse, il est rapatrié le 25 novembre 1918. Il épouse Clotilde et devient instituteur à Dannevoux.' },
+  { side: 'vladimir', year: '1919', title: 'Le choix de la Russie', text: 'Après la guerre, il choisit de rentrer en Russie plutôt que de rester réfugié en Allemagne. Il rejoint Moscou en 1919.' },
+  { side: 'leon', year: 'Années 1920', title: 'La lettre de Moscou', text: 'Vladimir lui écrit, décrit la misère et demande s’il peut venir en France. Léon répond qu’il ne peut pas l’accueillir.' },
+  { side: 'vladimir', year: 'Années 1920', title: 'La lettre à Léon', text: 'Il fabrique des briquets pour survivre. La réponse négative de Léon le blesse — il n’en parlera jamais à son fils.' },
+  { side: 'leon', year: '1971', title: 'La fin d’une vie', text: 'Léon s’éteint à Dannevoux, après plus de trente ans à instruire des générations d’élèves.' },
+  { side: 'vladimir', year: '1977', title: 'Ingénieur au Bolchoï', text: 'Vladimir a survécu aux purges. Ingénieur électricien dans les théâtres de Moscou, il meurt en 1977.' },
+];
+---
+
+<BaseLayout
+  locale={locale}
+  title="L’évasion — carte interactive"
+  description="La nuit du 15 mai 1915, deux officiers prisonniers descendent le mur de la forteresse de Königstein. Suivez leur route, étape par étape."
+  path={Astro.url.pathname}
+>
+  <section class="evasion-hero">
+    <div class="container-wide">
+      <p class="kicker">15 mai 1915 · Königstein</p>
+      <h1>L’évasion de Léon &amp; Vladimir</h1>
+      <p class="lede">
+        La nuit du 14 au 15 mai 1915, deux officiers prisonniers — un instituteur lorrain
+        et un officier russe du Turkestan — descendent le mur de la forteresse réputée
+        imprenable. Suivez leur route, étape par étape.
+      </p>
+    </div>
+  </section>
+
+  <section class="container-wide map-section">
+    <div class="map-layout">
+      <figure class="map-figure">
+        <svg
+          class="map"
+          viewBox="0 0 800 640"
+          role="img"
+          aria-label="Carte de l’itinéraire de l’évasion de Königstein à Leitmeritz, puis retour à Dresde"
+        >
+          <defs>
+            <linearGradient id="river" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="var(--map-river)" stop-opacity="0.9" />
+              <stop offset="1" stop-color="var(--map-river)" stop-opacity="0.5" />
+            </linearGradient>
+          </defs>
+
+          <!-- fond / terrain -->
+          <rect class="map-bg" x="0" y="0" width="800" height="640" rx="6" />
+          <g class="terrain">
+            <path d="M0 300 Q 120 250 240 300 T 480 300 T 800 290 L 800 640 L 0 640 Z" />
+            <path d="M0 420 Q 160 380 320 430 T 640 430 T 800 420 L 800 640 L 0 640 Z" />
+            <path d="M0 520 Q 200 480 400 530 T 800 520 L 800 640 L 0 640 Z" />
+          </g>
+
+          <!-- frontière Saxe / Bohême -->
+          <line class="border-line" x1="40" y1="365" x2="760" y2="365" />
+          <text class="border-label" x="760" y="355" text-anchor="end">Saxe</text>
+          <text class="border-label" x="760" y="385" text-anchor="end">Bohême</text>
+
+          <!-- Elbe -->
+          <path
+            class="river"
+            d="M 355 560 C 375 505 400 430 418 350 C 428 300 432 260 430 215 C 400 175 280 120 150 95 C 100 78 55 68 20 62"
+          />
+          <text class="river-label" x="300" y="150" transform="rotate(-28 300 150)">Elbe</text>
+
+          <!-- itinéraire de fuite -->
+          <path
+            class="route route-escape"
+            d="M 430 215 C 420 260 428 300 412 345 L 400 405 C 390 455 372 505 355 545"
+          />
+          <!-- itinéraire de retour -->
+          <path
+            class="route route-return"
+            d="M 355 545 C 372 505 390 455 400 405 C 410 350 420 300 430 215 C 400 175 280 120 150 95"
+          />
+
+          <!-- points d'étape -->
+          {waypoints.map((wp) => (
+            <g class="wp-marker" data-wp={wp.id} tabindex="0" role="button" aria-label={wp.title}>
+              <circle class="wp-halo" cx={wp.x} cy={wp.y} r="16" />
+              <circle class="wp-dot" cx={wp.x} cy={wp.y} r="11" />
+              <text class="wp-num" x={wp.x} y={wp.y + 4} text-anchor="middle">{wp.num}</text>
+              <text class="wp-label" x={wp.x} y={wp.y - 22} text-anchor="middle">{wp.label}</text>
+            </g>
+          ))}
+
+          <!-- rose des vents -->
+          <g class="compass" transform="translate(720 60)">
+            <circle r="26" />
+            <path d="M0 -20 L6 0 L0 20 L-6 0 Z" />
+            <text y="-30" text-anchor="middle">N</text>
+          </g>
+        </svg>
+        <figcaption>
+          Itinéraire reconstitué d’après le récit de Léon et le rapport du colonel von Tschirschky.
+          Cliquez sur une étape pour en lire le détail.
+        </figcaption>
+      </figure>
+
+      <aside class="map-panel" aria-live="polite">
+        {waypoints.map((wp) => (
+          <article class="wp-card" data-wp={wp.id}>
+            <span class="wp-card-num">{wp.num}</span>
+            <h2>{wp.title}</h2>
+            <p class="wp-card-date">{wp.date}</p>
+            <p class="wp-card-text">{wp.text}</p>
+          </article>
+        ))}
+        <div class="map-controls">
+          <button type="button" class="play-btn" id="play-btn">▶ Rejouer le parcours</button>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="container-wide timeline-section">
+    <h2 class="section-title">Deux destins, une même nuit</h2>
+    <p class="section-sub">
+      Deux vies que la guerre a réunies à Königstein, puis séparées. Faites défiler
+      l’histoire de Léon et de Vladimir.
+    </p>
+
+    <div class="timeline">
+      {timeline.map((ev) => (
+        <div class={`tl-item tl-${ev.side}`}>
+          <div class="tl-marker" />
+          <div class="tl-card">
+            <span class="tl-year">{ev.year}</span>
+            <h3>{ev.title}</h3>
+            <p>{ev.text}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .evasion-hero {
+    padding: 4rem 0 2rem;
+    text-align: center;
+  }
+  .evasion-hero .kicker {
+    font-family: var(--font-ui);
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin: 0 0 1rem;
+    font-size: 0.9rem;
+  }
+  .evasion-hero h1 {
+    font-family: var(--font-ui);
+    font-weight: 700;
+    font-size: clamp(2.25rem, 5vw, 3.75rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin: 0 0 1.25rem;
+  }
+  .evasion-hero .lede {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    line-height: 1.7;
+    color: var(--color-text-soft);
+    max-width: 46rem;
+    margin: 0 auto;
+  }
+
+  .map-section {
+    padding: 2rem 0 4rem;
+  }
+  .map-layout {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+  .map-figure {
+    margin: 0;
+  }
+  .map-figure figcaption {
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-top: 0.75rem;
+  }
+
+  .map {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* variables de la carte (claires / sombres) */
+  .map {
+    --map-bg: #f4efe4;
+    --map-terrain: #e7dfcd;
+    --map-river: #7fa8c9;
+    --map-route: #e05431;
+    --map-return: #909499;
+    --map-border: #b7a98c;
+    --map-label: #6b6252;
+  }
+  @media (prefers-color-scheme: dark) {
+    .map {
+      --map-bg: #2a2c2e;
+      --map-terrain: #33352f;
+      --map-river: #5b7f9c;
+      --map-route: #e05431;
+      --map-return: #909499;
+      --map-border: #6b6252;
+      --map-label: #c4c7cc;
+    }
+  }
+
+  .map-bg { fill: var(--map-bg); }
+  .terrain path { fill: var(--map-terrain); opacity: 0.6; }
+
+  .border-line {
+    stroke: var(--map-border);
+    stroke-width: 1.5;
+    stroke-dasharray: 6 5;
+  }
+  .border-label {
+    font-family: var(--font-ui);
+    font-size: 12px;
+    fill: var(--map-label);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .river {
+    fill: none;
+    stroke: url(#river);
+    stroke-width: 14;
+    stroke-linecap: round;
+    opacity: 0.85;
+  }
+  .river-label {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 15px;
+    fill: var(--map-river);
+  }
+
+  .route {
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .route-escape {
+    stroke: var(--map-route);
+    stroke-width: 3;
+    stroke-dasharray: 8 6;
+    animation: dash 1.2s linear infinite;
+  }
+  .route-return {
+    stroke: var(--map-return);
+    stroke-width: 2.5;
+    stroke-dasharray: 3 7;
+  }
+  @keyframes dash {
+    to { stroke-dashoffset: -14; }
+  }
+
+  .wp-marker { cursor: pointer; }
+  .wp-halo {
+    fill: var(--map-bg);
+    stroke: var(--map-route);
+    stroke-width: 2;
+    opacity: 0;
+    transition: opacity 0.15s;
+  }
+  .wp-dot {
+    fill: var(--map-route);
+    stroke: var(--map-bg);
+    stroke-width: 2;
+    transition: transform 0.15s;
+  }
+  .wp-num {
+    font-family: var(--font-ui);
+    font-weight: 700;
+    font-size: 12px;
+    fill: #fff;
+    pointer-events: none;
+  }
+  .wp-label {
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 500;
+    fill: var(--map-label);
+    pointer-events: none;
+  }
+  .wp-marker:hover .wp-dot,
+  .wp-marker.active .wp-dot {
+    transform: scale(1.25);
+  }
+  .wp-marker:hover .wp-halo,
+  .wp-marker.active .wp-halo {
+    opacity: 0.35;
+  }
+  .wp-marker.active .wp-label {
+    fill: var(--map-route);
+    font-weight: 700;
+  }
+
+  .compass circle {
+    fill: var(--map-bg);
+    stroke: var(--map-border);
+    stroke-width: 1.5;
+  }
+  .compass path { fill: var(--map-route); }
+  .compass text {
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 700;
+    fill: var(--map-label);
+  }
+
+  .map-panel {
+    position: sticky;
+    top: 5rem;
+    border: 1px solid var(--color-border);
+    border-left: 3px solid var(--color-accent);
+    border-radius: var(--radius);
+    background: var(--color-bg-soft);
+    padding: 1.75rem;
+    min-height: 20rem;
+  }
+  .wp-card { display: none; }
+  .wp-card.active { display: block; animation: fade 0.3s ease; }
+  @keyframes fade {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: none; }
+  }
+  .wp-card-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: var(--color-accent);
+    color: #fff;
+    font-family: var(--font-ui);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+  .wp-card h2 {
+    font-family: var(--font-ui);
+    font-size: 1.35rem;
+    margin: 0 0 0.4rem;
+    line-height: 1.25;
+  }
+  .wp-card-date {
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    color: var(--color-accent);
+    font-weight: 500;
+    margin: 0 0 0.75rem;
+  }
+  .wp-card-text {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--color-text-soft);
+    margin: 0;
+  }
+  .map-controls { margin-top: 1.5rem; }
+  .play-btn {
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.5em 1.1em;
+    color: var(--color-accent);
+    background: transparent;
+    border: 1px solid var(--color-accent);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .play-btn:hover {
+    background: var(--color-accent);
+    color: #fff;
+  }
+
+  .timeline-section {
+    padding: 3rem 0 4rem;
+    border-top: 1px solid var(--color-border);
+  }
+  .section-title {
+    font-family: var(--font-ui);
+    font-weight: 700;
+    font-size: 2rem;
+    margin: 0 0 0.5rem;
+    text-align: center;
+  }
+  .section-sub {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    color: var(--color-text-muted);
+    text-align: center;
+    max-width: 40rem;
+    margin: 0 auto 3rem;
+  }
+
+  .timeline {
+    position: relative;
+    max-width: 46rem;
+    margin: 0 auto;
+    padding-left: 1.5rem;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0.5rem;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--color-border);
+  }
+  .tl-item {
+    position: relative;
+    padding: 0 0 1.75rem 2rem;
+  }
+  .tl-marker {
+    position: absolute;
+    left: -1.5rem;
+    top: 0.4rem;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: var(--color-bg);
+    border: 2px solid var(--color-accent);
+  }
+  .tl-both .tl-marker {
+    background: var(--color-accent);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-accent) 25%, transparent);
+  }
+  .tl-vladimir .tl-marker {
+    border-color: var(--map-river);
+  }
+  .tl-card {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 1.1rem 1.25rem;
+    background: var(--color-bg-elevated);
+  }
+  .tl-both .tl-card {
+    border-left: 3px solid var(--color-accent);
+    background: var(--color-bg-soft);
+  }
+  .tl-year {
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--color-accent);
+    text-transform: uppercase;
+  }
+  .tl-card h3 {
+    font-family: var(--font-ui);
+    font-size: 1.15rem;
+    margin: 0.25rem 0 0.4rem;
+  }
+  .tl-card p {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--color-text-soft);
+    margin: 0;
+  }
+
+  @media (max-width: 860px) {
+    .map-layout { grid-template-columns: 1fr; }
+    .map-panel { position: static; }
+  }
+</style>
+
+<script>
+  const markers = document.querySelectorAll('.wp-marker');
+  const cards = document.querySelectorAll('.wp-card');
+  const playBtn = document.getElementById('play-btn');
+  const ids = Array.from(markers).map((m) => m.dataset.wp);
+
+  function select(id) {
+    cards.forEach((c) => c.classList.toggle('active', c.dataset.wp === id));
+    markers.forEach((m) => m.classList.toggle('active', m.dataset.wp === id));
+  }
+
+  markers.forEach((m) => {
+    m.addEventListener('click', () => select(m.dataset.wp));
+    m.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        select(m.dataset.wp);
+      }
+    });
+  });
+
+  let timer = null;
+  playBtn.addEventListener('click', () => {
+    if (timer) {
+      clearInterval(timer);
+      timer = null;
+      playBtn.textContent = '▶ Rejouer le parcours';
+      return;
+    }
+    let i = 0;
+    select(ids[0]);
+    playBtn.textContent = '■ Arrêter';
+    timer = setInterval(() => {
+      i = (i + 1) % ids.length;
+      select(ids[i]);
+    }, 2200);
+  });
+
+  select(ids[0]);
+</script>

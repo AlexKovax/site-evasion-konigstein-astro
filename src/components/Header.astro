@@ -22,6 +22,7 @@ const isActive = (href: string) =>
     <a class="brand" href={`/${locale}/`}>{t.siteName}</a>
     <ul>
       <li><a href={`/${locale}/histoire/`} class={isActive(`/${locale}/histoire/`) ? 'active' : ''}>{t.navHome}</a></li>
+      <li><a href={`/${locale}/evasion/`} class={isActive(`/${locale}/evasion/`) ? 'active' : ''}>{t.navEscape}</a></li>
       <li><a href={`/${locale}/a-propos/`} class={isActive(`/${locale}/a-propos/`) ? 'active' : ''}>{t.navAbout}</a></li>
       <li>
         {hasOtherVersion ? (
