@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Fond nuit -->
+  <rect width="64" height="64" rx="13" fill="#222426"/>
+  <!-- Lune -->
+  <circle cx="19" cy="16" r="8" fill="#e05431"/>
+  <!-- Plateau rocheux -->
+  <path d="M0 64 L0 46 Q 18 32 34 30 L64 30 L64 64 Z" fill="#3b3d40"/>
+  <!-- Forteresse crénelée -->
+  <path d="M36 30 V13 H40 V9 H44 V13 H48 V9 H52 V13 H56 V30 Z" fill="#e1e3e6"/>
+  <!-- Fenêtre -->
+  <rect x="43.5" y="18" width="5" height="9" rx="2.5" fill="#222426"/>
+  <!-- Corde de l'évasion -->
+  <path d="M36 31 C 35 40 33 50 31 63" fill="none" stroke="#e05431" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 2.4"/>
+</svg>
