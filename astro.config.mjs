@@ -35,4 +35,12 @@ export default defineConfig({
     },
     rehypePlugins: [rehypeImages],
   },
+  // CSP stricte (netlify.toml : script-src 'self'; font-src 'self') :
+  // on désactive l'inlining Vite (défaut 4096 o) qui sinon embarque
+  // les petits scripts en <script> inline et les polices woff2 en base64.
+  vite: {
+    build: {
+      assetsInlineLimit: 0,
+    },
+  },
 });
